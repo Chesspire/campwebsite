@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -16,7 +20,7 @@ body {
   height: 100vh;
   width: 100vw;
 
-  background-color: #d3d3d3;
+  background-color: #6586A2;
 }
 
 header {
@@ -30,12 +34,15 @@ header {
 
   position: fixed;
 
-  background-color: rgba(211, 211, 211, 0.9);
-  border-bottom: solid black 0.1vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: solid #ECEAD4 0.1vh;
+
+  z-index: 2;
+
 }
 
 .logo {
-  color: black;
+  color: #ECEAD4;
   text-decoration: none;
 
   font-size: 5vh;
@@ -45,7 +52,7 @@ nav li,
 a {
   list-style: none;
   text-decoration: none;
-  color: black;
+  color: #ECEAD4;
 
   display: inline-block;
   padding: 0px 3vw;
@@ -59,13 +66,15 @@ header button {
   padding: 1vh 0.8vh;
   font-size: 3vh;
 
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.5vw;
   border: none;
+
+  color: #ECEAD4;
 }
 
 header button:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
@@ -97,7 +106,7 @@ header button:hover {
 
 .descriptionBox h1 {
   font-size: 8vw;
-  color: rgb(72, 114, 156);
+  color: black;
 }
 
 .descriptionBox p {
@@ -115,6 +124,8 @@ header button:hover {
 
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 1vw;
+
+  color: black;
 }
 
 .actionButtons a:hover {
@@ -136,12 +147,51 @@ header button:hover {
   width: 80%;
 }
 
+/* Sponsorship CSS */
+#sponsorship {
+  margin-top: 25vh;
+
+  background-color: #333333;
+
+  color: white;
+
+  height: 25vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  scroll-margin-top: 10vh;
+}
+
+#sponsorship h2 {
+  font-size: 3vw;
+}
+
+#sponsorship button {
+  margin-top: 4vh;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  font-size: 1.5vw;
+
+  border: none;
+  border-radius: 0.5vw;
+
+  padding: 1vh 1vh;
+  
+}
+
+#sponsorship button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 /* Second Body Block CSS */
 .secondBody {
   height: 90vh;
   width: 100vw;
-
-  margin-top: 25vh;
 
   display: flex;
   justify-content: center;
@@ -150,11 +200,11 @@ header button:hover {
 
   background-color: #444444;
 
-  color: rgb(72, 114, 156);
+  color: white;
 }
 
 .secondBody h1 {
-  font-size: 6vw;
+  font-size: 4vw;
 }
 
 .threeWay {
@@ -165,8 +215,8 @@ header button:hover {
 }
 
 .threeWay h2 {
-  font-size: 3vw;
-  color: rgb(72, 114, 156);
+  font-size: 2vw;
+  color: white;
 }
 
 .what,
@@ -180,36 +230,155 @@ header button:hover {
   font-family: "Kanit", sans-serif;
 }
 
-/* ! About CSS */
+/* Contact CSS */
+#contact {
+  height: 25vh;
+  width: 100vw;
 
-.mission {
-  height: 40vh;
-
-  padding-top: 10%;
-
-  align-items: center;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: #333333;
+
+  color: white;
+
+  scroll-margin-top: 10vh;
+
+  padding-bottom: 2vh;
 }
 
-.founders {
-  padding-top: 5vh;
+#contact h1 {
+  font-size: 3vw;
+}
 
+#contact h2 {
+  padding-top: 1vh;
+  padding-bottom: 0.5vh;
+
+  font-size: 1.5vw;
+}
+
+#contact a {
+  padding-top: 1vh;
+
+  all: initial;
+
+  color: white;
+}
+
+/* footer css */
+footer {
+  height: 10vh;
+  width: 100vw;
+
+  background-color: #222222;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ! About CSS */
+#aboutUs {
+
+  background-color: #444444;
+  color: white;
+  
+  scroll-margin-top: 10vh;
+}
+
+.containerImage {
+  background-image: url("/assets/chessBackground.jpg");
+  background-size: auto auto;
+  background-position: center 150px;
+
+  height: 15vh;
+  width: 100vw;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* add this to make the ::before position relative to the container */
+}
+
+.containerImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  background-color: black; /* add a background color to make the ::before element visible */
+}
+
+.containerImage h1 {
+  font-size: 10vh;
+  opacity: 1;
+  color: white;
+  position: relative; /* add this to make the text position relative to the container */
+  z-index: 1; /* add this to bring the text above the ::before element */
+}
+
+#aboutUs h2 {
+  padding-bottom: 1vh;
+  font-size: 5vh;
+}
+
+#aboutUs p {
+  font-size: 3vh;
+
+  padding-bottom: 2vh;
+}
+
+
+#founders {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-color: #333333;
+
+  scroll-margin-top: 10vh;
 }
 
-.founders h1 {
-  font-size: 6vw;
-  color: rgb(72, 114, 156);
+#founders .containerImage {
   background-image: url("/assets/chessBackground.jpg");
-  background-position: center 80%;
+  background-size: auto auto;
+  background-position: center 150px;
 
-  width: 100vw;
   height: 15vh;
+  width: 100vw;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* add this to make the ::before position relative to the container */
 }
+
+#founders .containerImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  background-color: black; /* add a background color to make the ::before element visible */
+}
+
+#founders .containerImage h1 {
+  font-size: 10vh;
+  opacity: 1;
+  color: white;
+  position: relative; /* add this to make the text position relative to the container */
+  z-index: 1; /* add this to bring the text above the ::before element */
+}
+
 
 .row1FounderBox {
   display: flex;
@@ -238,11 +407,13 @@ header button:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  color: white;
 }
 
 .founder img {
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
 
   flex-basis: 100%;
 }
