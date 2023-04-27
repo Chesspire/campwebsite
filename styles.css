@@ -55,7 +55,7 @@ a {
   color: #ECEAD4;
 
   display: inline-block;
-  padding: 0px 3vw;
+  padding: 0px 1vw;
 
   font-size: 3vh;
 }
@@ -189,7 +189,7 @@ header button:hover {
 }
 
 /* Second Body Block CSS */
-#secondBody {
+#summercamp {
   height: 90vh;
   width: 100vw;
 
@@ -284,7 +284,7 @@ footer {
 }
 
 /* ! About CSS */
-#aboutUs {
+#founding {
 
   background-color: #444444;
   color: white;
@@ -355,10 +355,25 @@ footer {
   padding-bottom: 3vh;
 }
 
+.founderStory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1vh 0px;
+
+  width: 80vw;
+}
+
+.founderStory > div {
+  margin: 10px;
+  text-align: center;
+}
+
 
 .row1FounderBox {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   padding: 1vh 0px;
