@@ -1,238 +1,445 @@
-<!-- Praneeth O - Apr 16, 2023 -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chesspire</title>
+    <meta charset="utf-8">
+    <title>Welcome to Chesspire </title>
+     <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
 
-    <link href="./styles.css" rel="stylesheet" type="text/css"></link>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--Get Icons from https://icons.getbootstrap.com/ 
+    https://www.iconarchive.com/show/material-icons-by-pictogrammers/chess-queen-icon.html
+    -->
 </head>
+
 <body>
-    <header>
-        <a class="logo" href="./">Chesspire</a>
-        <nav>
-            <ul>
-                <li><a href="#summercamp">Summer Camp</a></li>
-                <li><a href="#founding">Founding Story</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#advisors">Advisors</a></li>
-                <li><a href="#sponsors">Sponsors</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
+     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+              <span class= "bi bi-arrow-repeat">  </span>
+        </div>
+    </div>
+     <!-- Navbar -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-trophy me-3"></i>Chesspire</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="#home" class="nav-item nav-link active">Home</a>
+                    <a href="#Founders" class="nav-item nav-link">Founding Story</a>
+                    <a href="#Advisors" class="nav-item nav-link">Advisors</a>
+                    <a href="#classes" class="nav-item nav-link">Classes</a>
+                    <a href="#teams" class="nav-item nav-link">Teams</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Archives</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="UnderConstruction.html" class="dropdown-item">Previous Chess Camps</a>
+                        </div>
+                    </div>
+                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
         </nav>
-        <button class="signButton">SIGN UP!</button>
-    </header>
 
-    <div class="home">
-        <div class="leftBox">
-            <div class="descriptionBox">
-                <h1><center>Level up from a ♙ to a ♕</center></h1>
-                <p>
-                    Providing the Greater Pittsburgh Area With Free Chess Training
-                </p>
-            </div>
-
-            <div class="actionButtons">
-                <a href="https://forms.gle/QA2YxCYGhRoppPfQ6">SIGN UP</a>
-                <a>VOLUNTEER</a>
-                <a>SPONSOR US!</a>
-            </div>
-        </div>
-        <div class="rightBox">
-            <img class="landingGIF" src="./assets/landingChess.gif"></img>
-        </div>
-    </div>
-
-    <div id="summercamp">
-        <div class="containerImage">
-            <h1>Summer Camp</h1>
-        </div>
-        <div class="threeWay">
-            <div class="what">
-                <h2>
-                    What is Chesspire?
-                </h2>
-                <p>
-                        Chesspire is a free chess training program for kids in the Greater Pittsburgh hosted by professional high schoolers. 
-                    We provide a fun and engaging environment for kids to learn chess and improve their skills.
-                    We also give out prizes to the top competitors at each tournament (hosted weekly) and provide a free lunch for all participants.
-                </p>
-                <br/>
-                <p>
-                        This summer, we're hosting a training camp with two divisions, the Cubs and the Tigers. 
-                    The cubs are for introductory chess players, where they will learn how to play the game and basic tactics.
-                    The tigers are for more advanced chess players, where you will learn more theory, advanced plays, and gambits.
-                </p>
-            </div>
-            <div class="where">
-                <h2>
-                    Where is the camp?
-                </h2>
-                <p>
-                    We will be hosting our training camp at the North Allegheny Intermediate High School in rooms 210 and 311.
-                </p>
-                <br/>
-                <p>
-                    As we move on with our program, we'll be doing online classes, but more information on that after the summer camp! 
-                </p>
-            </div>  
-            <div class="when">
-                <h2>
-                    When is the camp?
-                </h2>
-                <p>
-                    June 12-16, 2023 from 8-11AM
-                </p>
+        <div class="menu">
+            <div class="container-fluid  py-5 mb-5 hero-header">
+                <div class="container py-1  ">
+                    <div class="row justify-content-center py-1">                      
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="founding">
-        <div class="containerImage">
-            <h1 style="padding-top: 3vh;"><center>Founding Story</center></h1>
-        </div>
-
-        <div class="founderStory">
-
-            <div class="founderStoryPerson">
-                <img src="./assets/FounderPictures/haresh.webp"></img>
-                <h2 >Haresh Muralidharan</h2>
-                <h2>Founder</h2>
-            </div>
-
-            <div class="founderStoryPerson">
-                <img src="./assets/FounderPictures/kaartic.jpeg"></img>
-                <h2>Kaartic Muralidharan</h2>
-                <h2>Cofounder</h2>
-            </div>
-        </div>
-
-        <h2 style="padding-top: 2vh;">Why Chesspire?</h2>
-        <p>
-            Chesspire is a nonprofit organization dedicated to inspiring the next generation of chess players to aspire to new heights by developing their decision making and problem solving skills.
-        </p>
-        <h2>Our Mission</h2>
-        <p>
-            Teaching crucial life skills through spreading the love of chess
-        </p>
-    </div>
-
-    <div id="team">
-        <div class="containerImage" style="padding-top: 4vh;">
-            <h1>Our Team</h1>
-        </div>
-        
-
-        <div class="row1FounderBox">
-            <div class="founder">
-                <img src="./assets/FounderPictures/praneeth.webp"></img>
-                <h2>Praneeth Otthi</h2>
-                <h2>Chief Technology Officer</h2>
-            </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/haresh.webp"></img>
-                <h2>Haresh Muralidharan</h2>
-                <h2>CEO, President, and Founder</h2>
-            </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/kaartic.jpeg"></img>
-                <h2>Kaartic Muralidharan</h2>
-                <h2>Vice President, COO, and Cofounder</h2>
-            </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/nilay.png"></img>
-                <h2>Nilay Mishra</h2>
-                <h2>Chief Financial Officer</h2>
-            </div>
-        </div>
-
-        <div class="row2FounderBox">
-            <div class="founder">
-                <img src="./assets/FounderPictures/anushka.jpg"></img>
-                <h2>Anushka Prabhu</h2>
-                <h2>Chief Design Officer</h2>
-            </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/rishabh.jpg"></img>
-                <h2>Rishabh Udeshi</h2>
-                <h2>Curriculum Designer</h2>
-            </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/person.png"></img>
-                <h2>Jason Liu</h2>
-                <h2>Curriculum Designer</h2>
-            </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/person.png"></img>
-                <h2>Max Fang</h2>
-                <h2>Beginner Class Teacher</h2>
-            </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/person.jpg"></img>
-                <h2>Avni Khandelwal</h2>
-                <h2>Director of Organization</h2>
+    <!-- Home-->
+    <div id="home" class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-120 h-120" src="images/landingChess.gif" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4">Welcome to <span class="text-primary">Chesspire</span></h1>
+                    <h3 class="mb-6">Level up from a ♙ to a ♕.</h3>
+                    <p class="mb-4"></p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Free Summer camp</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Local Chapters</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Chapters</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>English,Spanish and French</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Pittsburgh based</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="">Sign Up</a>
+                    <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="">Volunteer</a>
+                    <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="">Sponsor</a>
+                </div>
             </div>
         </div>
     </div>
-
-    <div id="advisors">
-        <div class="containerImage" style="padding-top: 4vh;">
-            <h1>Advisors</h1>
-        </div>
-        
-        <div class="row1FounderBox">
-            <div class="founder">
-                <img src="./assets/FounderPictures/morey.jpg"></img>
-                <h2>Dr. John Morey</h2>
-                <h2>Assistant Principal- North Allegheny Intermediate School</h2>
-                <p>Dr. John Morey has been an educator for 22 years with the last eight as a school administrator in the North Allegheny School District. 
-                    He believes that all students should be provided opportunities to learn and grow and is excited to support this wonderful program which does just that!</p>
+    <!-- Home -->
+<br>
+<br>
+<br>
+<br>
+    <!-- Founders-->
+    <div id="Founders" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Founding Story</h6>
+                <h1 class="mb-5">Meet our Founders</h1>
             </div>
-
-            <div class="founder">
-                <img src="./assets/FounderPictures/steele.jpg"></img>
-                <h2>Mrs. Carolyn Steele</h2>
-                <h2>NAI GOAL Teacher</h2>
-                <p>Mrs. Steele is a gifted education teacher from North Allegheny Intermediate High School.  
-                    She loves helping students engage in higher level thinking activities like chess.</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/haresh.webp" style="max-height: 400px; max-width: 400px;"  alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Loves AI</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Travel</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>Multi-Lingual</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Haresh Muralidharan</h3>
+                            
+                            <p>Haresh Muralidharan is a high school student who loves math, science, and technology. He has a lot of interests, skills, and hobbies. He loves chess, piano, and badminton and also likes swimming, biking, and has earned a black belt in Taekwondo. He really enjoys coding and computer science and teaches a coding class. He likes to read a lot too due to his thirst for knowledge, and also loves to partake in competitions in math and science. He has traveled to various places and likes to learn languages and about different cultures. His favorite subjects in school are math, science, technology, and French. </p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="#" class="btn btn-sm btn-primary px-3 rounded-pill " style="border-radius: 30px 0 0 30px;">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/kaartic.jpeg" style="max-height: 400px; max-width: 400px;"   alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Writer</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Loves Chess</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>Awards</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Kaartic Muralidharan</h3>
+                          
+                            <p>Kaartic Muralidharan is a high school student who loves math, science, and technology.</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="#" class="btn btn-sm btn-primary px-3 rounded-pill " style="border-radius: 30px 0 0 30px;">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- Founders-->
 
-    <div id="sponsors">
-        <div class="containerImage">
-            <h1>Interested in Sponsoring Us?</h1>
+    <!-- Advisors-->
+    <div id="Advisors" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Advisors</h6>
+                <h1 class="mb-5">Meet our Advisors</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/morey.jpg" style="max-height: 400px; max-width: 400px;"  alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-briefcase text-primary me-2"></i>Assistant Principal</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Travel</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>Multi-Lingual</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Dr. John Morey</h3>
+                           
+                            <p>John Morey has been an educator for 22 years with the last eight as a school administrator in the North Allegheny School District. 
+                                He believes that all students should be provided opportunities to learn and grow and is excited to support this wonderful program which does just that!</p>
+                        </p>
+ 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/steele.jpg" style="max-height: 400px; max-width: 400px;"   alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-briefcase text-primary me-2"></i>GOAL Teacher</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Loves Chess</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>Awards</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Mrs. Carolyn Steele</h3>
+                            
+                            <p>Steele is a gifted education teacher from North Allegheny Intermediate High School.  
+                                She loves helping students engage in higher level thinking activities like chess.</p>
+     
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h2><center>Help create next generation of chess players and problem solvers by partnering with us.</center></h2>
-        <center><button>
-            Sponsorship Information
-        </button></center>
-        <h3><center>Current Sponsors</center></h3>
-        <p>Coming Soon!</p>
     </div>
-
-    <div id="contact">
-        <div class="containerImage">
-            <h1>Have any questions, comments, or concerns?</h1>
+    <!-- Advisors-->
+    <!-- Classes -->
+    <div id="classes" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">What we do</h6>
+                <h1 class="mb-5">Our Classes</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5>WorldWide Chapters</h5>
+                            <p>We are actively looking to expand chapters interntationally</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
+                            <h5>Language</h5>
+                            <p>We conduct classes in English,Spanish and French</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-user text-primary mb-4"></i>
+                            <h5>Zoom Class </h5>
+                            <p>Offer class via Zoom</p>
+                        </div>
+                    </div>
+                </div>   
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-user text-primary mb-4"></i>
+                            <h5>USCF Rated Tournaments  </h5>
+                            <p>Free USCF Rated Tournaments </p>
+                        </div>
+                    </div>
+                </div>       
         </div>
-
-        <h2><center>Have any questions, comments, or concerns?</center></h2>
-        <h3><center>Feel free to contact us!</center></h3>
-        <h3>Email: <a href="mailto:haresh@chesspire.org">haresh@chesspire.org</a></h3>
     </div>
+    <!-- Classes -->
 
-    <footer>
-        © 2023 Chesspire. Website designed by Praneeth Otthi and Haresh Muralidharan. Updated by Chesspire Organizers.
-    </footer>
-</body> 
+    <!-- Team Start -->
+    <div id="teams" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Team</h6>
+                <h1 class="mb-5">Meet Our Team</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/haresh.webp" style="max-height: 300px; max-width: 300px  ;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Haresh Muralidharan</h5>
+                            <small>President and CEO</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/kaartic.jpeg" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Kaartic Muralidharan</h5>
+                            <small>Vice-President and COO</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/praneeth.webp" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Praneeth Otthi</h5>
+                            <small>Chief Technology Officer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/nilay.png" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Nilay Mishra</h5>
+                            <small>Chief Financial Officer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/anushka.jpg" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Anushka Prabhu</h5>
+                            <small>Chief Design Officer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/rishabh.jpg"  style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Rishabh Udeshi</h5>
+                            <small>Curriculum Designer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/person.png" style="max-height: 400px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Max Fang</h5>
+                            <small>Beginner Class Teacher</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/person.png" style="max-height: 400px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Avni Khandelwal</h5>
+                            <small>Director of Organization</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team  -->   
+    
+    <div id = "contact" class="container-fluid bg-dark text-light footer pt-2 mt-2 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-2">
+            <div class="row g-2">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pittsburgh,PA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>1231231230</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>Haresh@chesspire.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-10 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">2023 Chesspire. All rights reserved.
+                    </div>
+                    <div class="col-md-10 text-center text-md-start mb-3 mb-md-0">
+                        <a class="border-bottom" href="#">Website designed by  Haresh Muralidharan, Kaartic Muralidharan and Praneeth Otthi. Updated by Chesspire Organizers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</body>
+
 </html>
