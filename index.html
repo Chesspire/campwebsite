@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chesspire</title>
+     <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+    <meta name="description" content = "Chesspire is a not-for-profit organization dedicated to fostering
+     the development of crucial real-life skills like problem solving and decision making through the game of chess"/>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="css/animate.min.css" rel="stylesheet">
+    <!-- Wow.js -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--Get Icons from https://icons.getbootstrap.com/ 
+    https://www.iconarchive.com/show/material-icons-by-pictogrammers/chess-queen-icon.html
+    -->
+</head>
+
+<body>   
+    <script >
+        wow = new WOW(
+            {
+            boxClass:     'wow',      // default
+            animateClass: 'animated', // default
+            offset:       0,          // default
+            mobile:       true,       // default
+            live:         true        // default
+        }
+        )
+        wow.init();
+    </script>
+     <!-- Navbar -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><img class="img-fluid" src="images/logo.png" style="max-height: 120px; max-width: 120px;" alt="">Chesspire</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="#home" class="nav-item nav-link active">Home</a>
+                    <a href="#WhyChess" class="nav-item nav-link">Why Chess</a>
+                    <a href="#Founders" class="nav-item nav-link">Founding Story</a>
+                    <a href="#Advisors" class="nav-item nav-link">Advisors</a>
+                    <a href="#classes" class="nav-item nav-link">Classes</a>
+                    <a href="#teams" class="nav-item nav-link">Our Team</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Archives</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="UnderConstruction.html" class="dropdown-item">Previous Chess Camps</a>
+                        </div>
+                    </div>
+                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="menu">
+            <div class="container-fluid  py-5 mb-5 hero-header">
+                <div class="container py-1  ">
+                    <div class="row justify-content-center py-1">                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home-->
+    <div id="home" class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" >
+                    <div class="position-relative h-100">
+                        <img class="img-fluid" src="images/landingChess.gif" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4">Welcome to <span class="text-primary">Chesspire</span></h1>
+                    <h2 class="mb-6">Level up from a ♙ to a ♕</h2>
+                    <p class="mb-0"><i class="fa fa-chess fa-xl text-dark me-2"></i><span class="text-primary">Inspiring</span> the next generation of problem-solvers to <span class="text-primary">aspire</span> through chess education </p>
+                    <p class="mb-4"></p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Free to all</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Local Chapters</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Chapters</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Join the Community</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Pittsburgh based</p>
+                        </div>
+                    </div>
+                    <p class="mb-0"><i class="fa fa-school fa-xl text-dark me-2"></i>We are having our next session on <span class="text-primary">June 12-16th</span> at <span class="text-primary">North Allegheny Intermediate 
+                        High School</span> from <span class="text-primary">8:00-11:00 AM</span></p>
+                    <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="https://forms.gle/yoviyrepkEHDgihq5">Sign Up!</a>
+                    <!-- <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="">Volunteer</a>
+                    <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="">Sponsor</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Home -->
+
+    <!-- Why Chess-->
+    <div id="WhyChess" class="container-xxl py-5 ">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Why Chess</h6>
+                <h1 class="mb-3">The Power of Chess </h1>
+                <p class="px-3 mb-5">Chess is the perfect way to develop essential life skills at no cost through the microcosm of a game</p>
+            </div>
+            <div class="row g-7s justify-content-center">
+                <div class="col-lg-5 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-brain text-primary mb-4"></i>
+                            <h5>Life Skills Taught by Chess:</h5>
+                            <div class="">
+                                <div class="col-sm-10">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Decision Making</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Problem Solving</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Critical Thinking</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Planning</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Risk Analysis</p>
+                                </div>
+                                <div class="col-sm-10">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Time Management</p>
+                                </div>
+                                <div class="col-sm-15">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Performance under Pressure</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                            <h5>Chess Education Supports:</h5>
+                            <div class="justify-content-center">
+                                <div class="col-sm-50">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Develops higher-order thinking skills</p>
+                                </div>
+                                <div class="col-sm-50">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Fosters ability to consider multiple 
+                                        viewpoints & see things from the 
+                                        opponent’s perspective</p>
+                                </div>
+                                <div class="col-sm-50">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Improves Memeory</p>
+                                </div>
+                                <div class="col-sm-50">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Enhances Cognitive Ability</p>
+                                </div>
+                                <div class="col-sm-50">
+                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Correlates to schoolastic achievement in STEM fields</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            
+        </div>
+    </div>
+    <!-- Why Chess-->
+
+    <!-- Founders-->
+    <div id="Founders" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Founding Story</h6>
+                <div class="text-center p-4">
+                    
+                    <p>
+                        As Haresh and Kaartic were attending many chess tournaments far from home, 
+                        they realized that there wasn’t a big chess community in the suburbs like there were in central Pittsburgh and other big cities 
+                        where chess tournaments were held. In the suburbs and local communities, chess clubs and communities have been few and far between. 
+                        Furthermore, chess education is an effective way to develop crucial life skills to underprivileged and underserved communities for free.
+                         They set out on a mission to foster the development of essential real-life skills like problem-solving and decision-making at a young age 
+                         by spreading the love of chess with the creation of a supporting community. 
+                    </p>
+                </div>
+                <h1 class="mb-5">Meet our Founders</h1>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid absolute" src="images/haresh.jpg" style="max-height: 400px; max-width: 500px;margin-left: 20px;"  alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-chalkboard-user text-primary me-2"></i>Enjoys Teaching</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-atom text-primary me-2"></i>Loves STEM</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-language text-primary me-2"></i>Polyglot</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Haresh Muralidharan</h3>
+                            
+                            <p>Haresh Muralidharan is a highschool sophomore who has a passion for Chess, STEM, business. He has a variety of hobbies 
+                                ranging from reading books to learning various languages to Taekwondo, in which he is currently a second-degree black belt. 
+                                His accomplishments include winning 15th place nationally in Science Bowl and working on creating a AI-focused documentary in partnership with SLB Radio.  
+                                He is an avid tournament chess player, having won many interstate tournaments and having played interntationally as well. 
+                                As the president of his school chess club, he has run many tournaments, including an official rated ones as a USCF-certified club tournament director.
+                                As a lifelong learner with a passion for teaching, he wanted to spread crucial life skills such as problem-solving and decision making through the rich game of chess. </p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <!-- <a href="#" class="btn btn-sm btn-primary px-3 rounded-pill " style="border-radius: 30px 0 0 30px;">Read More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/kaartic.jpeg" style="max-height: 400px; max-width: 400px;;margin-left: 20px;"   alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-code text-primary me-2"></i>Coder</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-flask text-primary me-2"></i>Enjoys Science</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-bookmark text-primary me-2"></i>Author</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Kaartic Muralidharan</h3>
+                          
+                            <p>Kaartic Muralidharan has a wide range of interests. He has been interested in science since a young age. 
+                                He authored a book called <a href ="https://www.amazon.com/Power-Energy-Kaartic-Muralidharan/dp/B0BW3BDJGM">Power of Energy</a> 
+                                on the different types of renewable energy. He enjoys spending time outside and loves to bike. 
+                                His biking adventures allowed him to get familiar with the geography, another one of his interests, of his neighborhood. 
+                                He also enjoys making things on his own, ranging from various real world contraptions to websites. 
+                                As an avid chess player, he has participated in many chess tournaments and won various prizes in them. 
+                                He hopes to spread his knowledge and passion for teaching chess through Chesspire.
+                            </p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <!-- <a href="#" class="btn btn-sm btn-primary px-3 rounded-pill " style="border-radius: 30px 0 0 30px;">Read More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Founders-->
+
+    <!-- Advisors-->
+    <div id="Advisors" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Advisors</h6>
+                <h1 class="mb-5">Meet our Advisors</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/morey.jpg" style="max-height: 400px; max-width: 350px;"  alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-briefcase text-primary me-2"></i>Assistant Principal</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>22 years</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-location-dot text-primary me-2"></i>NAI</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Dr. John Morey</h3>
+                           
+                            <p>John Morey has been an educator for 22 years with the last eight as a school administrator in the North Allegheny School District. 
+                                He believes that all students should be provided opportunities to learn and grow and is excited to support this wonderful program which does just that!</p>
+                        </p>
+ 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/steele.jpg" style="max-height: 400px; max-width: 350px;"   alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-briefcase text-primary me-2"></i>GOAL Teacher</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-chess-knight text-primary me-2"></i>Loves Chess</small>
+                            <small class="flex-fill text-center py-2" href="https://www.northallegheny.org/domain/18"><i class="fa fa-location-dot text-primary me-2"></i>NAI</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">Mrs. Carolyn Steele</h3>
+                            
+                            <p>Steele is a gifted education teacher from North Allegheny Intermediate High School.  
+                                She loves helping students engage in higher level thinking activities like chess.</p>
+     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Advisors-->
+
+    <!-- Classes -->
+    <div id="classes" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">What we do</h6>
+                <h1 class="mb-5">Our Classes</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-chalkboard-user text-primary mb-4"></i>
+                            <h5>Free Mentors & Teachers</h5>
+                            <p>Making chess education free by interactive education with skilled and trained teachers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-cubes text-primary mb-4"></i>
+                            <h5>Level 1: Cubs</h5>
+                            <p>Teaching everything from the rules of the game to basic openings, strategy, and endgames</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-screwdriver-wrench text-primary mb-4"></i>
+                            <h5>Level 2: Tigers</h5>
+                            <p>More intermediate players who want a challenge can learn more advanced concepts, techniques, and dynamic patterns</p>
+                        </div>
+                    </div>
+                </div>   
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-trophy text-primary mb-4"></i>
+                            <h5>Free USCF Rated Tournaments</h5>
+                            <p>Giving students a taste of real tournament experience to perform under pressure and continue their chess beyond our classes</p>
+                        </div>
+                    </div>
+                </div>       
+        </div>
+    </div>
+    <!-- Classes -->
+
+    <!-- Team Start -->
+    <div id="teams" class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Team</h6>
+                <h1 class="mb-5">Meet Our Team</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/haresh.jpg" style="max-height: 300px; max-width: 300px  ;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:haresh@chesspire.org"><i class="fa fa-envelope"></i></a>
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Haresh Muralidharan</h5>
+                            <small>President and CEO</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/kaartic.jpeg" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:kmuralidharan@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Kaartic Muralidharan</h5>
+                            <small>Vice-President and COO</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/praneeth.jpg" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:potthi2@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Praneeth Otthi</h5>
+                            <small>Chief Technology Officer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/nilay.png" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:nmishra@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Nilay Mishra</h5>
+                            <small>Chief Financial Officer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/anushka.jpg" style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:aprabhu@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Anushka Prabhu</h5>
+                            <small>Chief Design Officer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/rishabh.jpg"  style="max-height: 300px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:rudeshi@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Rishabh Udeshi</h5>
+                            <small>Curriculum Designer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/person.png" style="max-height: 400px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:mfang@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Max Fang</h5>
+                            <small>Beginner Class Teacher</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/avni.jpg" style="max-height: 400px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:akhandelwal@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Avni Khandelwal</h5>
+                            <small>Director of Expansion & Communications</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="images/jason.jpg" style="max-height: 400px; max-width: 300px;" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            <a class="btn btn-square mx-1" href="mailto:jliu@nastudents.org"><i class="fa fa-envelope"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Jason Liu</h5>
+                            <small>Curriculum Designer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team  -->   
+    
+    <div id = "contact" class="container-fluid bg-dark text-light footer pt-2 mt-2 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-2">
+            <div class="row g-2">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pittsburgh, PA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>Coming Soon</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>haresh@chesspire.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-10 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">2023 Chesspire. All rights reserved.
+                    </div>
+                    <div class="col-md-10 text-center text-md-start mb-3 mb-md-0">
+                        <a class="border-bottom" href="#">Website designed by  Haresh Muralidharan, Kaartic Muralidharan and Praneeth Otthi. Updated by Chesspire Organizers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</body>
+</html>
