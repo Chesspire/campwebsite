@@ -327,3 +327,8 @@
     padding-right: 0;
     border-right: none;
 }
+
+.imgwrapper {
+    display: flex;
+    justify-content: center;
+}
