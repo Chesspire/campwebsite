@@ -91,7 +91,7 @@
     max-height: 45px;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1066.98px) {
     .sticky-top.navbar-light {
         position: relative;
         background: #FFFFFF;
@@ -115,7 +115,7 @@
 }
  
 
-@media (min-width: 992px) {
+@media (min-width: 1067px) {
     .navbar-light {
         position: absolute;
         width: 100%;

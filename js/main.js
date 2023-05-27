@@ -15,7 +15,7 @@
     const showClass = "show";
   
     $(window).on("load resize", function() {
-        if (this.matchMedia("(min-width: 992px)").matches) {
+        if (this.matchMedia("(min-width: 1067px)").matches) {
             $dropdown.hover(
             function() {
                 const $this = $(this);
