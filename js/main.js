@@ -55,6 +55,21 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
+
+    window.addEventListener('load', function () {
+    $( "#moreBtn" ).click(function() {
+        var $this = $(this);
+        $this.toggleClass("open");
+
+        if ($this.hasClass("open")) {
+            $this.html("Less");
+            $("#dots").css("display", "none");
+        } else {
+            $this.html("Read more");
+        $("#dots").css("display", "inline");
+        }
+        $( "#more" ).slideToggle( "fast" );
+      });
+    });
  
 })(jQuery);
-
