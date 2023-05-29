@@ -13,6 +13,15 @@
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
+
+    // function expandContract() {
+    //     const el = document.getElementById("shorter")
+    //     el.classList.toggle('expanded')
+    //     el.classList.toggle('collapsed')
+    //     const el = document.getElementById("longer")
+    //     el.classList.toggle('expanded')
+    //     el.classList.toggle('collapsed')
+    //  }
   
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 1067px)").matches) {
