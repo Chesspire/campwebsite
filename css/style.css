@@ -91,6 +91,22 @@
     max-height: 45px;
 }
 
+#shorter {
+    transition: all 1s;
+}
+
+#longer {
+    transition: all 1s;
+}
+
+.collapsed {
+    display: none;
+}
+
+.expanded {
+    display: inline;
+}
+
 @media (max-width: 1066.98px) {
     .sticky-top.navbar-light {
         position: relative;
