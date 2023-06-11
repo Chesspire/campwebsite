@@ -352,3 +352,16 @@
 #more {
     display: none;
 }
+
+#contact-nav-drop {
+    display: none;
+    min-width: 15px;
+}
+
+#contact-nav-link:hover #contact-nav-drop {
+    display: block;
+}
+
+.m-1 .dropdown-item {
+    padding-right: 0;
+}
