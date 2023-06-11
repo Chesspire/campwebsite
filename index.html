@@ -35,7 +35,19 @@
 
     <!--Get Icons from https://icons.getbootstrap.com/ 
     https://www.iconarchive.com/show/material-icons-by-pictogrammers/chess-queen-icon.html
+
+    
     -->
+    <script type="text/javascript" 	src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+	</script>   
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement(
+				{pageLanguage: 'en'},
+				'google_translate_element'
+			);
+		}
+	</script>
 </head>
 
 <body>   
@@ -51,17 +63,31 @@
         )
         wow.init();
     </script>
+     <style type="text/css">
+        .goog-logo-link,.goog-te-gadget span{
+        display:none !important;
+        }
+        .goog-te-gadget{
+      color:transparent!important;
+      font-size :0;
+      }
+      body > .skiptranslate {
+        display: none;
+    }
+      </style>
      <!-- Navbar -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
                 <h1 class="text-primary m-0"><img class="img-fluid" src="images/logo.png" style="max-height: 120px; max-width: 120px;" alt="">Chesspire</h1>
             </a>
+            <div  id="google_translate_element"></div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
+
                     <a href="#home" class="nav-item nav-link active">Home</a>
                     <a href="#classes" class="nav-item nav-link">Classes</a>
                     <a href="#Founders" class="nav-item nav-link">Founding Story</a>
