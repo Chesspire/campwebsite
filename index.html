@@ -34,9 +34,7 @@
     <script defer data-domain="chesspire.org" src="https://plausible.shuchir.dev/js/script.outbound-links.js"></script>
 
     <!--Get Icons from https://icons.getbootstrap.com/ 
-    https://www.iconarchive.com/show/material-icons-by-pictogrammers/chess-queen-icon.html
-
-    
+    https://www.iconarchive.com/show/material-icons-by-pictogrammers/chess-queen-icon.html  
     -->
     <script type="text/javascript" 	src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 	</script>   
@@ -63,17 +61,40 @@
         )
         wow.init();
     </script>
-     <style type="text/css">
+    <!-- https://www.3schools.in/2021/02/how-to-customize-google-translate.html-->
+     <style type="text/css">      
         .goog-logo-link,.goog-te-gadget span{
-        display:none !important;
+            display:none !important;
         }
         .goog-te-gadget{
-      color:transparent!important;
-      font-size :0;
-      }
-      body > .skiptranslate {
-        display: none;
-    }
+            color:transparent!important;
+            font-size :0;
+        }
+        body > .skiptranslate {
+            display: none;    
+        }
+        #google_translate_element select{
+            background-color:#f4fded;
+            color:#383ffa;
+            border: none;
+            border-radius:3px;
+            padding:6px 8px;
+            animation-name: example;
+            animation-duration: 4s;
+        }
+        .goog-te-banner-frame{
+            display:none !important;
+        }
+        #goog-gt-tt, .goog-te-balloon-frame
+        {
+            display: none !important;
+        }
+        .goog-text-highlight 
+        { 
+            background: none !important;
+            box-shadow: none !important;
+        }
+
       </style>
      <!-- Navbar -->
     <div class="container-fluid position-relative p-0">
@@ -81,7 +102,7 @@
             <a href="" class="navbar-brand p-0">
                 <h1 class="text-primary m-0"><img class="img-fluid" src="images/logo.png" style="max-height: 120px; max-width: 120px;" alt="">Chesspire</h1>
             </a>
-            <div  id="google_translate_element"></div>
+            <div class="wow fadeIn slow" id="google_translate_element"></div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
