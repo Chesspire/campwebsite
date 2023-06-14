@@ -57,6 +57,34 @@
     });
 
     window.addEventListener('load', function () {
+    fetch("data.json").then(resp => {
+        resp.json()
+        .then(data => {
+            console.log(data)
+            let team = data.team;
+            let teamGrid = document.getElementById("team_grid")
+            console.log(teamGrid)
+            for (let i=0; i<team.length; i++) {
+                teamGrid.innerHTML += `<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="${team[i].fadeDelay}s">
+                <div class="team-item">
+                    <div class="overflow-hidden imgwrapper">
+                        <img class="img-fluid" src="${team[i].image}" style="max-height: 300px; max-width: 300px  ;" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                        <a class="btn btn-square mx-1" href="mailto:${team[i].email}"><i class="fa fa-envelope"></i></a>
+                        <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">${team[i].name}</h5>
+                        <small>${team[i].role}</small>
+                    </div>
+                </div>
+            </div>`
+            }
+        })
+    })
+
     $( "#moreBtn" ).click(function() {
         var $this = $(this);
         $this.toggleClass("open");
