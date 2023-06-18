@@ -65,6 +65,7 @@
                     {pageLanguage: 'en'},
                     'google_translate_element'
                 );
+                
             })
         })
     if (window.location.pathname == "/") {
