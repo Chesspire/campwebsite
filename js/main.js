@@ -57,6 +57,17 @@
     });
 
     window.addEventListener('load', function () {
+        fetch("navbar.html").then(resp => {
+            resp.text()
+            .then(data => {
+                document.querySelector("#navbar").innerHTML = data;
+                new google.translate.TranslateElement(
+                    {pageLanguage: 'en'},
+                    'google_translate_element'
+                );
+            })
+        })
+    if (window.location.pathname == "/") {
     fetch("data.json").then(resp => {
         resp.json()
         .then(data => {
@@ -84,6 +95,7 @@
             }
         })
     })
+}
 
     $( "#moreBtn" ).click(function() {
         var $this = $(this);
