@@ -415,10 +415,9 @@
     padding: 0px 20px;
     font-size: 16px;
     line-height: 1.75;
-    color: #fff;
-    background-color: #86B817;
-    background-image: none;
-    border: 1px solid #cccccc;
+    color: #000;
+    background-color: transparent;
+    border: none;
     -ms-word-break: normal;
     word-break: normal;
   }
