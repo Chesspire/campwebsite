@@ -98,10 +98,10 @@
                     activeIndicator.classList.remove("active")
                 }
             }
-        }, 7000)
+        }, 3000)
     }
 
-    if (window.location.pathname == "/") {
+
     fetch("data.json").then(resp => {
         resp.json()
         .then(data => {
@@ -129,7 +129,6 @@
             }
         })
     })
-}
 
     $( "#moreBtn" ).click(function() {
         var $this = $(this);
