@@ -68,6 +68,39 @@
                 
             })
         })
+    if (window.location.pathname == "/pastcamps.html") {
+        setInterval(() => {
+            let carousels = document.getElementsByClassName("carousel")
+            for (let i = 0; i < carousels.length; i++) {
+                let items = carousels[i].getElementsByClassName("carousel-item")
+                let indicators = carousels[i].getElementsByClassName("carousel-indicators")[0].getElementsByTagName("li")
+                let active = carousels[i].getElementsByClassName("carousel-item active")[0]
+                let activeIndicator = carousels[i].getElementsByClassName("carousel-indicators")[0].getElementsByClassName("active")[0]
+                let index = Array.prototype.indexOf.call(items, active)
+                let indicatorindex = Array.prototype.indexOf.call(indicators, activeIndicator)
+                let next = items[index + 1]
+                let nextIndicator = indicators[indicatorindex + 1]
+                if (next) {
+                    next.classList.add("active")
+                    active.classList.remove("active")
+                }
+                else {
+                    items[0].classList.add("active")
+                    active.classList.remove("active")
+                }
+        
+                if (nextIndicator) {
+                    nextIndicator.classList.add("active")
+                    activeIndicator.classList.remove("active")
+                }
+                else {
+                    indicators[0].classList.add("active")
+                    activeIndicator.classList.remove("active")
+                }
+            }
+        }, 7000)
+    }
+
     if (window.location.pathname == "/") {
     fetch("data.json").then(resp => {
         resp.json()
