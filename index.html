@@ -46,11 +46,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     
     <!-- Analytics -->
     <script defer data-domain="chesspire.org" src="https://plausible.shuchir.dev/js/script.outbound-links.js"></script>
@@ -60,14 +62,6 @@
     -->
     <script type="text/javascript" 	src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 	</script>   
-	<script type="text/javascript">
-		function googleTranslateElementInit() {
-			new google.translate.TranslateElement(
-				{pageLanguage: 'en'},
-				'google_translate_element'
-			);
-		}
-	</script>
 </head>
 
 <body>   
@@ -82,6 +76,28 @@
         }
         )
         wow.init();
+        $(document).ready(function() {
+         $(".testimonial-carousel").owlCarousel({
+            autoplay: true,
+            smartSpeed: 1000,
+            center: true,
+            margin: 24,
+            dots: true,
+            loop: true,
+            nav : false,
+            responsive: {
+                0:{
+                    items:1
+                },
+                768:{
+                    items:2
+                },
+                992:{
+                    items:3
+                }
+            }
+        });
+    });
     </script>
     <!-- https://www.3schools.in/2021/02/how-to-customize-google-translate.html-->
      <style type="text/css">      
@@ -94,16 +110,6 @@
         }
         body > .skiptranslate {
             display: none;    
-        }
-        #google_translate_element select{
-            background-color:#86B817;
-            color:#F5F5F5;
-            border: none;
-            border-radius:6px;
-            padding:4px 4px;
-            margin-right: 2px;
-            animation-name: example;
-            animation-duration: 4s;
         }
         .goog-te-banner-frame{
             display:none !important;
@@ -120,53 +126,8 @@
 
       </style>
      <!-- Navbar -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
-                <h1 class="text-primary m-0"><img class="img-fluid" src="images/logo.png" style="max-height: 120px; max-width: 120px;" alt="">Chesspire</h1>
-            </a>
-            <div class="wow fadeIn slow" id="google_translate_element"></div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-
-                    <a href="#home" class="nav-item nav-link active" >Home</a>
-                    <a href="#classes" class="nav-item nav-link">Classes</a>
-                    <a href="#Founders" class="nav-item nav-link">Founding Story</a>
-                    <a href="#sponsors" class="nav-item nav-link">Sponsors</a>
-                    <a href="#teams" class="nav-item nav-link">Our Team</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="#WhyChess" class="dropdown-item">Why Chess</a>
-                            <a href="#Advisors" class="dropdown-item">Advisors</a>
-                            <a href="UnderConstruction.html" class="dropdown-item">Previous Chess Camps</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown" id="contact-nav-link">
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
-                        <div class="dropdown-menu m-1" id="contact-nav-drop">
-                            <a class="btn btn-outline-light btn-social dropdown-item" href="tel:+17242432739"><i class="fa fa-phone-alt me-3"></i></a>
-                            <a class="btn btn-outline-light btn-social dropdown-item" href="mailto:contact@chesspire.org"><i class="fa fa-envelope me-3"></i></a>
-                            <a class="btn btn-outline-light btn-social dropdown-item" href="https://twitter.com/chesspireteam"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social dropdown-item" href="https://www.instagram.com/chesspire.team/"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social dropdown-item" href="https://www.youtube.com/@Chesspire-xn2tb"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <div class="menu">
-            <div class="container-fluid  py-5 mb-5 hero-header">
-                <div class="container py-1  ">
-                    <div class="row justify-content-center py-1">                      
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid position-relative p-0" id="navbar">
+        
     </div>
 
     <!-- Home-->
@@ -206,8 +167,7 @@
                         </div>
                         
                     </div>
-                    <p class="mb-0"><i class="fa fa-school fa-xl text-dark me-2"></i>Our upcoming session (session full) is in-person on <span class="text-primary">June 12-16th</span> at <span class="text-primary">North Allegheny Intermediate 
-                        High School</span> from <span class="text-primary">8:00-11:00 AM</span> </br> <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2" href="#currentClass">Current Session Details</a></p>
+                    <p class="mb-0"><i class="fa fa-school fa-xl text-dark me-2"></i>Our last session was a great success! Take a look at our photos and testimonials.</br> <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2" href="#lastClass">Last Camp Details</a></p>
                     <br/>
                     
                     <p class="mb-0"><i class="fa fa-globe fa-xl text-dark me-2"></i>Our next session is scheduled for <span class="text-primary">September</span> and will be <span class="text-primary">online</span>, including 
@@ -343,81 +303,158 @@
     </div>
     <!-- Classes -->
 
-    <!-- Why Chess-->
-    <div id="currentClass" class="container-xxl py-5 ">
+    <!-- Class Details -->
+    <div id="lastClass" class="container-xxl py-5 ">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <!-- <h6 class="section-title bg-white text-center text-primary px-3">Why Chess</h6> -->
-                <h1 class="mb-3">Upcoming Session Details</h1>
-                <div class = "container justify-content-center" style="text-align: left;">
-                    <p class="px-3 mb-3"> <i class="fa fa-clock text-primary"></i><span class="text-primary"> Event Timing:</span> June 12-16th, 2023 @ 8:00-11:00 AM</p>
-                    </i><p class="px-3 mb-3"><i class="fa fa-location-dot text-primary"></i><span class="text-primary"> Event Address:</span> North Allegheny Intermediate High School (350 Cumberland Rd, Pittsburgh, PA 15237)</p>
-                    </i><p class="px-3 mb-3"><i class="fa fa-shirt text-primary"></i><span class="text-primary"> FREE</span> T-shirts will be provided to everyone and awards will be given to the winners of the tournament.</p>
-                    </i><p class="px-3 mb-3"><i class="fa fa-money-bill text-primary"></i><span class="text-primary"> USCF Membership Sponsorship:</span> We cover the cost of a USCF membership (encouraged but not required for this first session) for a year on a need-basis. Please contact <a href = "mailto:memberships@chesspire.org"> memberships@chesspire.org </a> for more information.</p>
-                </div>
-                    <a class="btn btn-primary rounded-pill py-2 px-4 mt-2 mb-4 justify-content-center" href="documents/Chesspire-USCF-Flyer.pdf">USCF Benefits Flyer</a>
-                <div class = "container justify-content-center" style="text-align: left;">
-                    </i><p class="px-3 mb-5"><i class="fa fa-microphone text-primary"></i><span class="text-primary"> Keynote Speaker:</span> Dr. Arvind Venkat will serve as a keynote speaker on Friday and pass out awards</p>
+                <h1 class="mb-3">Last Camp Details</h1>
+                <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2" href="pastcamps.html">More Session Details</a>
+                <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="container">
+                        <div class="text-center">
+                            <h6 class="section-title bg-white text-center text-primary px-3">Photos</h6>
+                            <h1 class="mb-5">Take a look at our last camp!</h1>
             
-                </div>
-                
-                
-                
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-lg-9 col-md-10 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="package-item">
+                            <div class="container">
                                 <div class="row g-4">
-                                    <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                        <div class="overflow-hidden imgwrapper">
-                                            <img class="img-fluid absolute" src="images/arvindvenkat.jpg" style="height: 300%; width: 300%;margin-left: 20px;"  alt="">
-                                        </div>
-                                        <div class="d-flex border-bottom">
-                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-building-columns text-primary me-2"></i>State Representative</small>
-                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-doctor text-primary me-2"></i>Physician</small>
-                                            <small class="flex-fill text-center py-2"><i class="fa fa-location-dot text-primary me-2"></i>McCandless</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                        <div class="text-center p-4">
-                                            <h3 class="mb-0">Rep. Dr. Arvind Venkat</h3>
-                                            <p id="longtext">Rep. Arvind Venkat, an emergency physician, was elected to serve his first term in the
-                                                state House of Representatives in November 2022. He is the first Indian American to be
-                                                elected to the state House and the first physician to serve in the General Assembly in
-                                                nearly 60 years.
-                                                He serves as State Representative for the 30th Legislative District, which includes part
-                                                of Hampton Township, and all of McCandless, Franklin Park, Ohio Township,
-                                                Emsworth, Ben Avon, Ben Avon Heights, and Kilbuck.<span id="dots">...</span><span id="more">
-                                                Rep. Venkat is a fighter for accessible and affordable healthcare, investing in our first
-                                                responders, protecting reproductive rights, curbing gun violence, expanding access to
-                                                the ballot box for all voters, and getting more people back into the workforce.
-                                                His parents immigrated to the United States, and it was their hard work and commitment
-                                                to service that inspired him to become a physician.
-                                                Rep. Venkat completed his undergraduate and graduate education at Harvard
-                                                University, his medical education at Yale University, and his emergency medicine
-                                                residency at the University of Cincinnati/University Hospital. He served as a member of
-                                                the Board of the McCandless-Franklin Park Ambulance Authority and is a former
-                                                president of the state emergency physicians organization.
-                                                Rep. Venkat currently lives in McCandless with his wife and three children. </span></p>
-                                            <div class="d-flex justify-content-center mb-2">
-                                                <a class="btn btn-sm btn-primary px-3 rounded-pill " style="border-radius: 30px 0 0 30px;" id="moreBtn">Read More</a>
-                                            </div>
-                                    </div>
-                                </div>
-                                
-                                
+                                    <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/everyone.jpg" style="height: 50%; width: 50% ;">
+                                    <!-- <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/principals.jpg" style="height: 40%; width: 40% ;"> -->
+                                    <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/play0.jpg" style="height: 50%; width: 50% ;">
+                                    <!-- <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/teach.jpg" style="height: 50%; width: 50% ;">
+                                    <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/team.JPG" style="height: 50%; width: 50% ;">
+                                    <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/clapping.JPG" style="height: 50%; width: 50% ;"> -->
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="owl-carousel testimonial-carousel position-relative">
+                            <div class="testimonial-item bg-white text-center border p-4 wow fadeInUp" data-wow-delay="0.1s">
+                                <img class= "bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/3.jpg" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/4.jpg" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/teach.jpg" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/clapping.JPG" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/awards.JPG" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/1.jpg" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/learn.jpg" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/food.JPG" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/playwrite.JPG" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/speecha.JPG" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/play2.JPG" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/team.JPG" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/principals.jpg" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+                            <div class="testimonial-item bg-white text-center border p-4">
+                                <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/teach2.jpg" style="height: 100%; width: 100%;">
+                                <!-- <p class="mt-2 mb-1">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p> -->
+                            </div>
+            
+                        </div>
                     </div>
-                <h3 class="mb-3 mt-5">Thank you to Our Food Sponsors!</h3>
-                <div class="container">
+                </div>
+                <!-- Photos End -->
+            
+                
+                <!-- Testimonial Quote Start -->
+                <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="container">
+                        <div class="text-center">
+                            <h6 class="section-title bg-white text-center text-primary px-3">Testimonials</h6>
+                            <h1 class="mb-5">What Our Students and Parents Say</h1>
+                        </div>
+                        <div class="owl-carousel testimonial-carousel position-relative">
+                            <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                                <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                                <p class="mb-0">Our child came home every day thinking he became an expert chess player</p>
+                                <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                                <h6>- Chris Walters</h6>
+                            </div>
+                            <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                                <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                                <p class="mb-0">This was our son’s first time attending a chess camp. He learned a lot about the game, had a lot of fun and is now interested in competing in chess tournaments! Thank you!</p>
+                                <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                                <h6>- Claire Carmack</h6>
+                            </div>
+                            <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                                <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                                <p class="mb-0">It helps make chess fun.</p>
+                                <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                                <h6>- Nikhil Bonthu</h6>
+                            </div>
+                            <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                                <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                                <p class="mb-0">This is an excellent and fun camp. Highly recommend to all chess players. My son loves chess and this was a great way for him to play and grow in his chess experiences It was educational.</p>
+                                <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                                <h6>- Debra Ferlet</h6>
+                            </div>
+                            <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                                <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                                <p class="mb-0">Chesspire is interactive, and you get a lot of help.</p>
+                                <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                                <h6>- Saanvi Gandhe</h6>
+                            </div>
+                            <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                                <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                                <p class="mb-0">“I don’t know how it could really improve, it’s already great. It taught me how to better notate and analyze better. It is really fun, useful, and an awesome learning experience.” - Alex Ferlet
+                                </p>
+                                <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                                <h6>- Alex Ferlet</h6>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+                <!-- Testimonial End -->
+            
+                <h3 class="mb-3 mt-0" style="text-align: center;">Thank you to Our Food Sponsors!</h3>
+                <div class="container mb-5">
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
                             <div class="package-item">
                                 <div class="overflow-hidden imgwrapper">
                                     <img class="img-fluid" src="images/montecellos.png" style="max-height: 500px;"   alt="">
                                 </div>
-
+                
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -425,7 +462,7 @@
                                 <div class="overflow-hidden imgwrapper">
                                     <img class="img-fluid" src="images/eatnpark.png" style="max-height: 200px;"   alt="">
                                 </div>
-
+                
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -433,17 +470,17 @@
                                 <div class="overflow-hidden imgwrapper">
                                     <img class="img-fluid" src="images/dunkin.jpg" style="max-height: 200px;"   alt="">
                                 </div>
-
+                
                             </div>
                         </div>
-
+                
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
                             <div class="package-item">
                                 <div class="overflow-hidden imgwrapper">
                                     <img class="img-fluid" src="images/handels.png" style="max-height: 200px;"   alt="">
                                 </div>
-
+                
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -451,7 +488,7 @@
                                 <div class="overflow-hidden imgwrapper">
                                     <img class="img-fluid" src="images/dibellas.jpg" style="max-height: 200px; max-width: 175px;"   alt="">
                                 </div>
-
+                
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -459,7 +496,7 @@
                                 <div class="overflow-hidden imgwrapper">
                                     <img class="img-fluid" src="images/oven.png" style="max-height: 200px; max-width: 175px;"   alt="">
                                 </div>
-
+                
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -467,19 +504,37 @@
                                 <div class="overflow-hidden imgwrapper">
                                     <img class="img-fluid" src="images/cencis.png" style="max-height: 115px; max-width: 115px;"   alt="">
                                 </div>
-
+                
                             </div>
                         </div>
                     </div>
                     </div>
                 </div>
-                
             </div>
             </div>
             
         </div>
     </div>
-    <!-- Why Chess-->
+    <!-- Upcoming Camp Details -->
+    <div id="currentClass" class="container-xxl py-5 ">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <!-- <h6 class="section-title bg-white text-center text-primary px-3">Why Chess</h6> -->
+                <h1 class="mb-3">Upcoming Session Details</h1>
+                <div class = "container justify-content-center" style="text-align: left;">
+                    <p class="px-3 mb-3"> <i class="fa fa-clock text-primary"></i><span class="text-primary"> Event Date:</span> Fall, Specifics TBD</p>
+                    </i><p class="px-3 mb-3"><i class="fa fa-money-bill text-primary"></i><span class="text-primary"> USCF Membership Sponsorship:</span> We cover the cost of a USCF membership (encouraged but not required for this first session) for a year on a need-basis. Please contact <a href = "mailto:memberships@chesspire.org"> memberships@chesspire.org </a> for more information.</p>
+                </div>
+                    <a class="btn btn-primary rounded-pill py-2 px-4 mt-2 mb-4 justify-content-center" href="documents/Chesspire-USCF-Flyer.pdf">USCF Benefits Flyer</a>
+                <div class = "container justify-content-center" style="text-align: left;">
+            
+                </div>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Class Details -->
 
 
     <!-- Founders-->
@@ -605,315 +660,7 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Our Team</h6>
                 <h1 class="mb-5">Meet Our Team</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/haresh.jpg" style="max-height: 300px; max-width: 300px  ;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:haresh@chesspire.org"><i class="fa fa-envelope"></i></a>
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Haresh Muralidharan</h5>
-                            <small>President & Chief Executive Officer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/kaartic.jpeg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:kmuralidharan@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Kaartic Muralidharan</h5>
-                            <small>Vice-President, Chief Operations Officer, Level 2 Teacher and Curriculum Designer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/shuchir.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:sjain3@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Shuchir Jain</h5>
-                            <small>Chief Technology Officer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/nilay.png" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:nmishra@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Nilay Mishra</h5>
-                            <small>Chief Financial Officer</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/anushka.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:aprabhu@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Anushka Prabhu</h5>
-                            <small>Chief Design Officer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/sritej.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:spadmanabhan@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Sritej Padmanabhan</h5>
-                            <small>Chief Information Officer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/lily.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:ltang@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Lily Tang</h5>
-                            <small>Chief People Officer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/praneeth.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:potthi2@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Praneeth Otthi</h5>
-                            <small>Director of Administration</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/avni.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:akhandelwal@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Avni Khandelwal</h5>
-                            <small>Director of Expansion & Communications</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/alex.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:adu@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Alex Du</h5>
-                            <small>Director of Media, Level 1 Teacher</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/ayan.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:asheikh@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Ayan Sheikh</h5>
-                            <small>Photography Lead</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/mihir.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:msharma2@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Mihir Sharma</h5>
-                            <small>Director of Vision</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/max.png" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:mfang@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Max Fang</h5>
-                            <small>Level 1 Teacher and Curriculum Designer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/marco.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:mcalsosarabia@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Marco Calso Sarabia</h5>
-                            <small>Level 1 Curriculum Designer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/rishabh.jpg"  style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:rudeshi@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Rishabh Udeshi</h5>
-                            <small>Level 2 Teacher and Curriculum Designer</small>
-                        </div>
-                    </div>
-                </div>                
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/jason.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:jliu@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Jason Liu</h5>
-                            <small>Level 2 Curriculum Designer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/jonathan.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:juh@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Jonathan Uh</h5>
-                            <small>Level 1 Teacher</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden imgwrapper">
-                            <img class="img-fluid" src="images/matthew.jpg" style="max-height: 300px; max-width: 300px;" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                            <a class="btn btn-square mx-1" href="mailto:cguo@nastudents.org"><i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Matthew Guo</h5>
-                            <small>Level 1 Teacher</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row g-4" id="team_grid"></div>
         </div>
     </div>
     <!-- Team  -->   

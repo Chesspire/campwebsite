@@ -1,0 +1,130 @@
+{
+    "team": [
+        {
+            "image": "images/haresh.jpg",
+            "name": "Haresh Muralidharan",
+            "role": "President & Chief Executive Officer",
+            "email": "haresh@chesspire.org",
+            "fadeDelay": 0.1
+        }, 
+        {
+            "image": "images/kaartic.jpeg",
+            "name": "Kaartic Muralidharan",
+            "role": "Vice-President, Chief Operations Officer, Level 2 Teacher and Curriculum Designer",
+            "email": "kmuralidharan@nastudents.org",
+            "fadeDelay": 0.3
+        },
+        {
+            "image": "images/shuchir.jpg",
+            "name": "Shuchir Jain",
+            "role": "Chief Technology Officer",
+            "email": "hi@shuchir.dev",
+            "fadeDelay": 0.5
+        },
+        {
+            "image": "images/nilay.png",
+            "name": "Nilay Mishra",
+            "role": "Chief Financial Officer",
+            "email": "nmishra@nastudents.org",
+            "fadeDelay": 0.7
+        },
+        {
+            "image": "images/anushka.jpg",
+            "name": "Anushka Prabhu",
+            "role": "Chief Design Officer",
+            "email": "aprabhu@nastudents.org",
+            "fadeDelay": 0.1
+        },
+        {
+            "image": "images/sritej.jpg",
+            "name": "Sritej Padmanahbhan",
+            "role": "Chief Information Officer",
+            "email": "spadmanabhan@nastudents.org",
+            "fadeDelay": 0.1
+        },
+        {
+            "image": "images/lily.jpg",
+            "name": "Lily Tang",
+            "role": "Chief People Officer",
+            "email": "ltang@nastudents.org",
+            "fadeDelay": 0.1
+        },
+        {
+            "image": "images/praneeth.jpg",
+            "name": "Praneeth Otthi",
+            "role": "Director of Administration",
+            "email": "potthi2@nastudents.org",
+            "fadeDelay": 0.1
+        },
+        {
+            "image": "images/avni.jpg",
+            "name": "Avni Khandelwal",
+            "role": "Director of Exapnsion & Communications",
+            "email": "akhandelwal@nastudents.org",
+            "fadeDelay": 0.7
+        },
+        {
+            "image": "images/alex.jpg",
+            "name": "Alex Du",
+            "role": "Director of Media, Level 1 Teacher",
+            "email": "adu@nastudents.org",
+            "fadeDelay": 0.1
+        },
+        {
+            "image": "images/ayan.jpg",
+            "name": "Ayan Sheikh",
+            "role": "Photography Lead",
+            "email": "asheikh@nastudents.org",
+            "fadeDelay": 0.7
+        },
+        {
+            "image": "images/mihir.jpg",
+            "name": "Mihir Sharma",
+            "role": "Director of Vision",
+            "email": "msharma2@nastudents.org",
+            "fadeDelay": 0.1
+        },
+        {
+            "image": "images/max.png",
+            "name": "Max Fang",
+            "role": "Level 1 Teacher and Curriculum Designer",
+            "email": "mfang@nastudents.org",
+            "fadeDelay": 0.5
+        },
+        {
+            "image": "images/marco.jpg",
+            "name": "Marco Calso Sarabia",
+            "role": "Level 1 Currciulum Designer",
+            "email": "mcalsosarabia@nastudents.org",
+            "fadeDelay": 0.5
+        },
+        {
+            "image": "images/rishabh.jpg",
+            "name": "Rishabh Udeshi",
+            "role": "Level 2 Teacher and Currciulum Designer",
+            "email": "rudeshi@nastudents.org",
+            "fadeDelay": 0.3
+        },
+        {
+            "image": "images/jason.jpg",
+            "name": "Jason Liu",
+            "role": "Level 2 Curriculum Designer",
+            "email": "jliu@nastudents.org",
+            "fadeDelay": 0.7
+        },
+        {
+            "image": "images/jonathan.jpg",
+            "name": "Jonathan Uh",
+            "role": "Level 1 Teacher",
+            "email": "juh@nastudents.org",
+            "fadeDelay": 0.7
+        },
+        {
+            "image": "images/matthew.jpg",
+            "name": "Matthew Guo",
+            "role": "Level 1 Teacher",
+            "email": "cguo@nastudents.org",
+            "fadeDelay": 0.7
+        }
+    ]
+}

@@ -57,6 +57,79 @@
     });
 
     window.addEventListener('load', function () {
+        fetch("navbar.html").then(resp => {
+            resp.text()
+            .then(data => {
+                document.querySelector("#navbar").innerHTML = data;
+                new google.translate.TranslateElement(
+                    {pageLanguage: 'en'},
+                    'google_translate_element'
+                );
+                
+            })
+        })
+    if (window.location.pathname == "/pastcamps.html") {
+        setInterval(() => {
+            let carousels = document.getElementsByClassName("carousel")
+            for (let i = 0; i < carousels.length; i++) {
+                let items = carousels[i].getElementsByClassName("carousel-item")
+                let indicators = carousels[i].getElementsByClassName("carousel-indicators")[0].getElementsByTagName("li")
+                let active = carousels[i].getElementsByClassName("carousel-item active")[0]
+                let activeIndicator = carousels[i].getElementsByClassName("carousel-indicators")[0].getElementsByClassName("active")[0]
+                let index = Array.prototype.indexOf.call(items, active)
+                let indicatorindex = Array.prototype.indexOf.call(indicators, activeIndicator)
+                let next = items[index + 1]
+                let nextIndicator = indicators[indicatorindex + 1]
+                if (next) {
+                    next.classList.add("active")
+                    active.classList.remove("active")
+                }
+                else {
+                    items[0].classList.add("active")
+                    active.classList.remove("active")
+                }
+        
+                if (nextIndicator) {
+                    nextIndicator.classList.add("active")
+                    activeIndicator.classList.remove("active")
+                }
+                else {
+                    indicators[0].classList.add("active")
+                    activeIndicator.classList.remove("active")
+                }
+            }
+        }, 3000)
+    }
+
+
+    fetch("data.json").then(resp => {
+        resp.json()
+        .then(data => {
+            console.log(data)
+            let team = data.team;
+            let teamGrid = document.getElementById("team_grid")
+            console.log(teamGrid)
+            for (let i=0; i<team.length; i++) {
+                teamGrid.innerHTML += `<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="${team[i].fadeDelay}s">
+                <div class="team-item">
+                    <div class="overflow-hidden imgwrapper">
+                        <img class="img-fluid" src="${team[i].image}" style="max-height: 300px; max-width: 300px  ;" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                        <a class="btn btn-square mx-1" href="mailto:${team[i].email}"><i class="fa fa-envelope"></i></a>
+                        <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">${team[i].name}</h5>
+                        <small>${team[i].role}</small>
+                    </div>
+                </div>
+            </div>`
+            }
+        })
+    })
+
     $( "#moreBtn" ).click(function() {
         var $this = $(this);
         $this.toggleClass("open");
