@@ -544,3 +544,7 @@ body > .skiptranslate {
     background: var(--primary);
     border-color: var(--primary);
 }
+
+.nav-item:hover {
+    cursor: pointer;
+}
