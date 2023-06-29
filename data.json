@@ -126,5 +126,65 @@
             "email": "cguo@nastudents.org",
             "fadeDelay": 0.7
         }
-    ]
+    ],
+    "pastcamps": {
+        "june2023": {
+             "previewimgs": [
+                "images/past/june2023/everyone.jpg",
+                "images/past/june2023/play0.jpg"
+             ],
+             "carouselimgs": [
+                "images/past/june2023/3.jpg",
+                "images/past/june2023/4.jpg",
+                "images/past/june2023/teach.jpg",
+                "images/past/june2023/arvind.jpg",
+                "images/past/june2023/clapping.JPG",
+                "images/past/june2023/awards.JPG",
+                "images/past/june2023/1.jpg",
+                "images/past/june2023/learn.jpg",
+                "images/past/june2023/food.JPG",
+                "images/past/june2023/playwrite.JPG",
+                "images/past/june2023/speecha.JPG",
+                "images/past/june2023/play2.JPG",
+                "images/past/june2023/team.JPG",
+                "images/past/june2023/principals.jpg",
+                "images/past/june2023/teach2.jpg"
+             ],
+             "testimonials": [
+                {
+                    "quote": "Our child came home every day thinking he became an expert chess player",
+                    "author": "Chris Walters"
+                },
+                {
+                    "quote": "This was our son’s first time attending a chess camp. He learned a lot about the game, had a lot of fun and is now interested in competing in chess tournaments! Thank you!",
+                    "author": "Claire Carmack"
+                },
+                {
+                    "quote": "It helps make chess fun.",
+                    "author": "Nikhil Bonthu"
+                },
+                {
+                    "quote": "This is an excellent and fun camp. Highly recommend to all chess players. My son loves chess and this was a great way for him to play and grow in his chess experiences It was educational.",
+                    "author": "Debra Ferlet"
+                },
+                {
+                    "quote": "Chesspire is interactive, and you get a lot of help.",
+                    "author": "Saanvi Gandhe"
+                },
+                {
+                    "quote": "I don’t know how it could really improve, it’s already great. It taught me how to better notate and analyze better. It is really fun, useful, and an awesome learning experience.",
+                    "author": "Alex Ferlet"
+                }
+             ],
+             "sponsors": [
+                "images/montecellos.png",
+                "images/eatnpark.png",
+                "images/dunkin.png",
+                "images/handels.png",
+                "images/dibellas.png",
+                "images/oven.png",
+                "images/cencis.png"
+             ]
+        }
+    }
 }

@@ -163,22 +163,13 @@
                 <h1 class="mb-5">Take a look at our previous camp!</h1>
 
                 <div class="container">
-                    <div class="row g-4">
-                        <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/everyone.jpg" style="height: 50%; width: 50% ;">
-                        <!-- <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/principals.jpg" style="height: 40%; width: 40% ;"> -->
-                        <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/play0.jpg" style="height: 50%; width: 50% ;">
-                        <!-- <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/teach.jpg" style="height: 50%; width: 50% ;">
-                        <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/team.JPG" style="height: 50%; width: 50% ;">
-                        <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/clapping.JPG" style="height: 50%; width: 50% ;"> -->
+                    <div class="row g-4" id="previewimgs">
                     </div>
                 </div>
             </div>
             
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item bg-white text-center border p-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class= "bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/3.jpg" style="height: 100%; width: 100%;">
-                    
-                </div>
+            <div class="owl-carousel testimonial-carousel position-relative" id="carouselimgs">
+                
                 <div class="testimonial-item bg-white text-center border p-4">
                     <img class="bg-white shadow p-1 mx-auto mb-3" src="images/past/june2023/4.jpg" style="height: 100%; width: 100%;">
                     
@@ -249,7 +240,7 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonials</h6>
                 <h1 class="mb-5">What Our Students and Parents Say</h1>
             </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
+            <div class="owl-carousel testimonial-carousel position-relative" id="testimonials">
                 <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
                     <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
                     <p class="mb-0">Our child came home every day thinking he became an expert chess player</p>
@@ -282,7 +273,7 @@
                 </div>
                 <div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
                     <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
-                    <p class="mb-0">“I don’t know how it could really improve, it’s already great. It taught me how to better notate and analyze better. It is really fun, useful, and an awesome learning experience.” - Alex Ferlet
+                    <p class="mb-0">I don’t know how it could really improve, it’s already great. It taught me how to better notate and analyze better. It is really fun, useful, and an awesome learning experience.
                     </p>
                     <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
                     <h6>- Alex Ferlet</h6>
@@ -298,65 +289,8 @@
 
     <h3 class="mb-3 mt-0" style="text-align: center;">Thank you to Our Food Sponsors!</h3>
     <div class="container mb-5">
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="package-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="images/montecellos.png" style="max-height: 500px;"   alt="">
-                    </div>
-    
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="package-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="images/eatnpark.png" style="max-height: 200px;"   alt="">
-                    </div>
-    
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="package-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="images/dunkin.jpg" style="max-height: 200px;"   alt="">
-                    </div>
-    
-                </div>
-            </div>
-    
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="package-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="images/handels.png" style="max-height: 200px;"   alt="">
-                    </div>
-    
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="package-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="images/dibellas.jpg" style="max-height: 200px; max-width: 175px;"   alt="">
-                    </div>
-    
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="package-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="images/oven.png" style="max-height: 200px; max-width: 175px;"   alt="">
-                    </div>
-    
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="package-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="images/cencis.png" style="max-height: 115px; max-width: 115px;"   alt="">
-                    </div>
-    
-                </div>
-            </div>
+        <div class="row g-4 justify-content-center" id="sponsors">
+
         </div>
         </div>
     </div>

@@ -106,6 +106,53 @@
     }
 
 
+        fetch("data.json").then(resp => {
+            resp.json()
+            .then(data => {
+                console.log(data)
+                let previewimgs = data.pastcamps.june2023.previewimgs;
+                let carouselimgs = data.pastcamps.june2023.carouselimgs;
+                let testimonials = data.pastcamps.june2023.testimonials;
+                let sponsors = data.pastcamps.june2023.sponsors;
+                let prevewimgsdiv = document.getElementById("previewimgs")
+
+                for (let i=0; i<previewimgs.length; i++) {
+                    prevewimgsdiv.innerHTML += `<img class="bg-white shadow p-1 mx-auto mb-3" src="${previewimgs[i]}" style="height: 50%; width: 50% ;">`
+                }
+
+                // let carouselimgsdiv = document.getElementById("carouselimgs")
+                // for (let i=0; i<carouselimgs.length; i++) {
+                //     carouselimgsdiv.innerHTML += `<div class="testimonial-item bg-white text-center border p-4 wow fadeInUp" data-wow-delay="0.1s">
+                //     <img class= "bg-white shadow p-1 mx-auto mb-3" src="${carouselimgs[i]}" style="height: 100%; width: 100%;">
+                    
+                // </div>`
+                // }
+
+                // let testimonialsdiv = document.getElementById("testimonials")
+                // for (let i=0; i<testimonials.length; i++) {
+                //     testimonialsdiv.innerHTML += `<div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                //     <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                //     <p class="mb-0">${testimonials[i].quote}</p>
+                //     <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                //     <h6>- ${testimonials[i].author}</h6>
+                // </div>`
+                // }
+
+                let sponsorsdiv = document.getElementById("sponsors")
+                for (let i=0; i<sponsors.length; i++) {
+                    sponsorsdiv.innerHTML += `<div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="package-item">
+                        <div class="overflow-hidden imgwrapper">
+                            <img class="img-fluid" src="${sponsors[i]}" style="max-height: 500px;"   alt="">
+                        </div>
+        
+                    </div>
+                </div>`
+                }
+        })
+    })
+
+    if (window.location.pathname == "/") {
     fetch("data.json").then(resp => {
         resp.json()
         .then(data => {
@@ -133,6 +180,7 @@
             }
         })
     })
+    }
 
     $( "#moreBtn" ).click(function() {
         var $this = $(this);
