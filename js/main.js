@@ -183,10 +183,9 @@
               }
             
             let directors = Array(document.getElementsByClassName("directors"))
-            let level1 = Array(document.getElementsByClassName("level1"))
-            let level2 = Array(document.getElementsByClassName("level2"))
+            let teachers = Array(document.getElementsByClassName("teachers"))
 
-            let all = directors.concat(level1, level2)
+            let all = directors.concat(teachers)
             console.log(all)
             for (let i=0; i<all.length; i++) {
                 for (let j=0; j<all[i].length; j++) {
@@ -198,95 +197,58 @@
 
     document.getElementById("execteam").addEventListener("click", function() {
         document.getElementById("directors").classList.remove("active")
-        document.getElementById("level1").classList.remove("active")
-        document.getElementById("level2").classList.remove("active")
+        document.getElementById("teachers").classList.remove("active")
         document.getElementById("execteam").classList.add("active")
         let execteam = document.getElementsByClassName("execteam")
         let directors = document.getElementsByClassName("directors")
-        let level1 = document.getElementsByClassName("level1")
-        let level2 = document.getElementsByClassName("level2")
+        let teachers = document.getElementsByClassName("teachers")
         for (let i=0; i<execteam.length; i++) {
             execteam[i].style.display = "block"
         }
         for (let i=0; i<directors.length; i++) {
             directors[i].style.display = "none"
         }
-        for (let i=0; i<level1.length; i++) {
-            level1[i].style.display = "none"
-        }
-        for (let i=0; i<level2.length; i++) {
-            level2[i].style.display = "none"
+        for (let i=0; i<teachers.length; i++) {
+            teachers[i].style.display = "none"
         }
     })
 
     document.getElementById("directors").addEventListener("click", function() {
         document.getElementById("directors").classList.add("active")
-        document.getElementById("level1").classList.remove("active")
-        document.getElementById("level2").classList.remove("active")
+        document.getElementById("teachers").classList.remove("active")
         document.getElementById("execteam").classList.remove("active")
         let execteam = document.getElementsByClassName("execteam")
         let directors = document.getElementsByClassName("directors")
-        let level1 = document.getElementsByClassName("level1")
-        let level2 = document.getElementsByClassName("level2")
+        let teachers = document.getElementsByClassName("teachers")
         for (let i=0; i<execteam.length; i++) {
             execteam[i].style.display = "none"
         }
         for (let i=0; i<directors.length; i++) {
             directors[i].style.display = "block"
         }
-        for (let i=0; i<level1.length; i++) {
-            level1[i].style.display = "none"
-        }
-        for (let i=0; i<level2.length; i++) {
-            level2[i].style.display = "none"
+        for (let i=0; i<teachers.length; i++) {
+            teachers[i].style.display = "none"
         }
     })
 
-    document.getElementById("level1").addEventListener("click", function() {
+    document.getElementById("teachers").addEventListener("click", function() {
         document.getElementById("directors").classList.remove("active")
-        document.getElementById("level1").classList.add("active")
-        document.getElementById("level2").classList.remove("active")
+        document.getElementById("teachers").classList.add("active")
         document.getElementById("execteam").classList.remove("active")
         let execteam = document.getElementsByClassName("execteam")
         let directors = document.getElementsByClassName("directors")
-        let level1 = document.getElementsByClassName("level1")
-        let level2 = document.getElementsByClassName("level2")
+        let teachers = document.getElementsByClassName("teachers")
         for (let i=0; i<execteam.length; i++) {
             execteam[i].style.display = "none"
         }
         for (let i=0; i<directors.length; i++) {
             directors[i].style.display = "none"
         }
-        for (let i=0; i<level1.length; i++) {
-            level1[i].style.display = "block"
-        }
-        for (let i=0; i<level2.length; i++) {
-            level2[i].style.display = "none"
+        for (let i=0; i<teachers.length; i++) {
+            teachers[i].style.display = "block"
         }
     })
 
-    document.getElementById("level2").addEventListener("click", function() {
-        document.getElementById("directors").classList.remove("active")
-        document.getElementById("level1").classList.remove("active")
-        document.getElementById("level2").classList.add("active")
-        document.getElementById("execteam").classList.remove("active")
-        let execteam = document.getElementsByClassName("execteam")
-        let directors = document.getElementsByClassName("directors")
-        let level1 = document.getElementsByClassName("level1")
-        let level2 = document.getElementsByClassName("level2")
-        for (let i=0; i<execteam.length; i++) {
-            execteam[i].style.display = "none"
-        }
-        for (let i=0; i<directors.length; i++) {
-            directors[i].style.display = "none"
-        }
-        for (let i=0; i<level1.length; i++) {
-            level1[i].style.display = "none"
-        }
-        for (let i=0; i<level2.length; i++) {
-            level2[i].style.display = "block"
-        }
-    })
     }
 
     $( "#moreBtn" ).click(function() {

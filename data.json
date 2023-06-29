@@ -11,7 +11,7 @@
             {
                 "image": "images/kaartic.jpeg",
                 "name": "Kaartic Muralidharan",
-                "role": "Vice-President, Chief Operations Officer, Level 2 Teacher and Curriculum Designer",
+                "role": "Vice-President & Chief Operations Officer",
                 "email": "kmuralidharan@nastudents.org",
                 "fadeDelay": 0.3
             },
@@ -34,13 +34,6 @@
                 "name": "Anushka Prabhu",
                 "role": "Chief Design Officer",
                 "email": "aprabhu@nastudents.org",
-                "fadeDelay": 0.1
-            },
-            {
-                "image": "images/sritej.jpg",
-                "name": "Sritej Padmanahbhan",
-                "role": "Chief Information Officer",
-                "email": "spadmanabhan@nastudents.org",
                 "fadeDelay": 0.1
             },
             {
@@ -69,14 +62,14 @@
             {
                 "image": "images/alex.jpg",
                 "name": "Alex Du",
-                "role": "Director of Media, Level 1 Teacher",
+                "role": "Director of Media",
                 "email": "adu@nastudents.org",
                 "fadeDelay": 0.1
             },
             {
                 "image": "images/ayan.jpg",
                 "name": "Ayan Sheikh",
-                "role": "Photography Lead",
+                "role": "Director of Photography",
                 "email": "asheikh@nastudents.org",
                 "fadeDelay": 0.7
             },
@@ -88,20 +81,20 @@
                 "fadeDelay": 0.1
             }
         ],
-        "level1": [
+        "teachers": [
             {
-                "image": "images/alex.jpg",
-                "name": "Alex Du",
-                "role": "Director of Media, Level 1 Teacher",
-                "email": "adu@nastudents.org",
+                "image": "images/haresh.jpg",
+                "name": "Haresh Muralidharan",
+                "role": "Curriculum Design Lead",
+                "email": "haresh@chesspire.org",
                 "fadeDelay": 0.1
             },
             {
-                "image": "images/max.png",
-                "name": "Max Fang",
-                "role": "Level 1 Teacher and Curriculum Designer",
-                "email": "mfang@nastudents.org",
-                "fadeDelay": 0.5
+                "image": "images/alex.jpg",
+                "name": "Alex Du",
+                "role": "Level 1 Teacher",
+                "email": "adu@nastudents.org",
+                "fadeDelay": 0.1
             },
             {
                 "image": "images/marco.jpg",
@@ -123,9 +116,21 @@
                 "role": "Level 1 Teacher",
                 "email": "cguo@nastudents.org",
                 "fadeDelay": 0.7
-            }
-        ],
-        "level2": [
+            },
+            {
+                "image": "images/max.png",
+                "name": "Max Fang",
+                "role": "Level 1 Curriculum Designer, Level 2 Teacher",
+                "email": "mfang@nastudents.org",
+                "fadeDelay": 0.5
+            },
+            {
+                "image": "images/kaartic.jpeg",
+                "name": "Kaartic Muralidharan",
+                "role": "Level 2 Teacher and Curriculum Designer",
+                "email": "kmuralidharan@nastudents.org",
+                "fadeDelay": 0.3
+            },
             {
                 "image": "images/rishabh.jpg",
                 "name": "Rishabh Udeshi",
