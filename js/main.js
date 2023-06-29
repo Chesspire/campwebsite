@@ -57,6 +57,10 @@
     });
 
     window.addEventListener('load', function () {
+        setInterval(() => {
+            document.body.style.top = 0;
+        }, 100)
+
         fetch("navbar.html").then(resp => {
             resp.text()
             .then(data => {
