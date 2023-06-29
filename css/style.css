@@ -405,6 +405,8 @@ body > .skiptranslate {
     margin-right: 2px;
     animation-name: example;
     animation-duration: 4s;
+    width: 127px;
+    margin-right: 25px;
 }
 .goog-te-banner-frame{
     display:none !important;
