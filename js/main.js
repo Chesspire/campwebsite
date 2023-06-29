@@ -57,6 +57,10 @@
     });
 
     window.addEventListener('load', function () {
+        setInterval(() => {
+            document.body.style.top = 0;
+        }, 100)
+
         fetch("navbar.html").then(resp => {
             resp.text()
             .then(data => {
@@ -99,9 +103,56 @@
                 }
             }
         }, 3000)
-    }
 
 
+        fetch("data.json").then(resp => {
+            resp.json()
+            .then(data => {
+                console.log(data)
+                let previewimgs = data.pastcamps.june2023.previewimgs;
+                let carouselimgs = data.pastcamps.june2023.carouselimgs;
+                let testimonials = data.pastcamps.june2023.testimonials;
+                let sponsors = data.pastcamps.june2023.sponsors;
+                let prevewimgsdiv = document.getElementById("previewimgs")
+
+                for (let i=0; i<previewimgs.length; i++) {
+                    prevewimgsdiv.innerHTML += `<img class="bg-white shadow p-1 mx-auto mb-3" src="${previewimgs[i]}" style="height: 50%; width: 50% ;">`
+                }
+
+                // let carouselimgsdiv = document.getElementById("carouselimgs")
+                // for (let i=0; i<carouselimgs.length; i++) {
+                //     carouselimgsdiv.innerHTML += `<div class="testimonial-item bg-white text-center border p-4 wow fadeInUp" data-wow-delay="0.1s">
+                //     <img class= "bg-white shadow p-1 mx-auto mb-3" src="${carouselimgs[i]}" style="height: 100%; width: 100%;">
+                    
+                // </div>`
+                // }
+
+                // let testimonialsdiv = document.getElementById("testimonials")
+                // for (let i=0; i<testimonials.length; i++) {
+                //     testimonialsdiv.innerHTML += `<div class="testimonial-quote bg-white text-center border p-4" style="border-radius:1rem;">
+                //     <i class="fa fa-2x fa-quote-left text-primary mb-1"></i>              
+                //     <p class="mb-0">${testimonials[i].quote}</p>
+                //     <i class="fa fa-2x fa-quote-right text-primary mt-1"></i>     
+                //     <h6>- ${testimonials[i].author}</h6>
+                // </div>`
+                // }
+
+                let sponsorsdiv = document.getElementById("sponsors")
+                for (let i=0; i<sponsors.length; i++) {
+                    sponsorsdiv.innerHTML += `<div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="package-item">
+                        <div class="overflow-hidden imgwrapper">
+                            <img class="img-fluid" src="${sponsors[i]}" style="max-height: 500px;"   alt="">
+                        </div>
+        
+                    </div>
+                </div>`
+                }
+        })
+    })
+}
+
+    if (window.location.pathname == "/" || window.location.pathname == "/index.html") {
     fetch("data.json").then(resp => {
         resp.json()
         .then(data => {
@@ -109,26 +160,134 @@
             let team = data.team;
             let teamGrid = document.getElementById("team_grid")
             console.log(teamGrid)
-            for (let i=0; i<team.length; i++) {
-                teamGrid.innerHTML += `<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="${team[i].fadeDelay}s">
-                <div class="team-item">
-                    <div class="overflow-hidden imgwrapper">
-                        <img class="img-fluid" src="${team[i].image}" style="max-height: 300px; max-width: 300px  ;" alt="">
-                    </div>
-                    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                        <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
-                        <a class="btn btn-square mx-1" href="mailto:${team[i].email}"><i class="fa fa-envelope"></i></a>
-                        <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
-                    </div>
-                    <div class="text-center p-4">
-                        <h5 class="mb-0">${team[i].name}</h5>
-                        <small>${team[i].role}</small>
-                    </div>
-                </div>
-            </div>`
+            for (const [role, people] of Object.entries(team)) {
+                for (let i=0; i<people.length; i++) {
+                    console.log(role)
+                    teamGrid.innerHTML += `<div class="col-lg-3 col-md-6 wow fadeInUp  ${role}" data-wow-delay="${people[i].fadeDelay}s">
+                        <div class="team-item">
+                            <div class="overflow-hidden imgwrapper">
+                                <img class="img-fluid" src="${people[i].image}" style="max-height: 300px; max-width: 300px  ;" alt="">
+                            </div>
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                                <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a> -->
+                                <a class="btn btn-square mx-1" href="mailto:${people[i].email}"><i class="fa fa-envelope"></i></a>
+                                <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                            </div>
+                            <div class="text-center p-4">
+                                <h5 class="mb-0">${people[i].name}</h5>
+                                <small>${people[i].role}</small>
+                            </div>
+                        </div>
+                    </div>`
+                }
+              }
+            
+            let directors = Array(document.getElementsByClassName("directors"))
+            let level1 = Array(document.getElementsByClassName("level1"))
+            let level2 = Array(document.getElementsByClassName("level2"))
+
+            let all = directors.concat(level1, level2)
+            console.log(all)
+            for (let i=0; i<all.length; i++) {
+                for (let j=0; j<all[i].length; j++) {
+                    all[i][j].style.display = "none"
+                }
             }
         })
     })
+
+    document.getElementById("execteam").addEventListener("click", function() {
+        document.getElementById("directors").classList.remove("active")
+        document.getElementById("level1").classList.remove("active")
+        document.getElementById("level2").classList.remove("active")
+        document.getElementById("execteam").classList.add("active")
+        let execteam = document.getElementsByClassName("execteam")
+        let directors = document.getElementsByClassName("directors")
+        let level1 = document.getElementsByClassName("level1")
+        let level2 = document.getElementsByClassName("level2")
+        for (let i=0; i<execteam.length; i++) {
+            execteam[i].style.display = "block"
+        }
+        for (let i=0; i<directors.length; i++) {
+            directors[i].style.display = "none"
+        }
+        for (let i=0; i<level1.length; i++) {
+            level1[i].style.display = "none"
+        }
+        for (let i=0; i<level2.length; i++) {
+            level2[i].style.display = "none"
+        }
+    })
+
+    document.getElementById("directors").addEventListener("click", function() {
+        document.getElementById("directors").classList.add("active")
+        document.getElementById("level1").classList.remove("active")
+        document.getElementById("level2").classList.remove("active")
+        document.getElementById("execteam").classList.remove("active")
+        let execteam = document.getElementsByClassName("execteam")
+        let directors = document.getElementsByClassName("directors")
+        let level1 = document.getElementsByClassName("level1")
+        let level2 = document.getElementsByClassName("level2")
+        for (let i=0; i<execteam.length; i++) {
+            execteam[i].style.display = "none"
+        }
+        for (let i=0; i<directors.length; i++) {
+            directors[i].style.display = "block"
+        }
+        for (let i=0; i<level1.length; i++) {
+            level1[i].style.display = "none"
+        }
+        for (let i=0; i<level2.length; i++) {
+            level2[i].style.display = "none"
+        }
+    })
+
+    document.getElementById("level1").addEventListener("click", function() {
+        document.getElementById("directors").classList.remove("active")
+        document.getElementById("level1").classList.add("active")
+        document.getElementById("level2").classList.remove("active")
+        document.getElementById("execteam").classList.remove("active")
+        let execteam = document.getElementsByClassName("execteam")
+        let directors = document.getElementsByClassName("directors")
+        let level1 = document.getElementsByClassName("level1")
+        let level2 = document.getElementsByClassName("level2")
+        for (let i=0; i<execteam.length; i++) {
+            execteam[i].style.display = "none"
+        }
+        for (let i=0; i<directors.length; i++) {
+            directors[i].style.display = "none"
+        }
+        for (let i=0; i<level1.length; i++) {
+            level1[i].style.display = "block"
+        }
+        for (let i=0; i<level2.length; i++) {
+            level2[i].style.display = "none"
+        }
+    })
+
+    document.getElementById("level2").addEventListener("click", function() {
+        document.getElementById("directors").classList.remove("active")
+        document.getElementById("level1").classList.remove("active")
+        document.getElementById("level2").classList.add("active")
+        document.getElementById("execteam").classList.remove("active")
+        let execteam = document.getElementsByClassName("execteam")
+        let directors = document.getElementsByClassName("directors")
+        let level1 = document.getElementsByClassName("level1")
+        let level2 = document.getElementsByClassName("level2")
+        for (let i=0; i<execteam.length; i++) {
+            execteam[i].style.display = "none"
+        }
+        for (let i=0; i<directors.length; i++) {
+            directors[i].style.display = "none"
+        }
+        for (let i=0; i<level1.length; i++) {
+            level1[i].style.display = "none"
+        }
+        for (let i=0; i<level2.length; i++) {
+            level2[i].style.display = "block"
+        }
+    })
+    }
 
     $( "#moreBtn" ).click(function() {
         var $this = $(this);
