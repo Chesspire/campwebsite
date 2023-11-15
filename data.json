@@ -72,13 +72,6 @@
                 "role": "Director of Photography",
                 "email": "asheikh@nastudents.org",
                 "fadeDelay": 0.7
-            },
-            {
-                "image": "images/mihir.jpg",
-                "name": "Mihir Sharma",
-                "role": "Director of Vision",
-                "email": "msharma2@nastudents.org",
-                "fadeDelay": 0.1
             }
         ],
         "teachers": [
