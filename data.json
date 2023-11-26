@@ -60,6 +60,13 @@
                 "fadeDelay": 0.7
             },
             {
+                "image": "images/marco.jpg",
+                "name": "Marco Calso Sarabia",
+                "role": "Director of Chapters and Global Outreach",
+                "email": "mcalsosarabia@nastudents.org",
+                "fadeDelay": 0.5
+            },
+            {
                 "image": "images/alex.jpg",
                 "name": "Alex Du",
                 "role": "Director of Media",
