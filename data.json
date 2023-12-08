@@ -90,58 +90,86 @@
                 "fadeDelay": 0.1
             },
             {
+                "image": "images/kaartic.jpeg",
+                "name": "Kaartic Muralidharan",
+                "role": "Level 2 Chess Teacher and Curriculum Designer, Biology Instructor",
+                "email": "kmuralidharan@nastudents.org",
+                "fadeDelay": 0.3
+            },
+            {
+                "image": "images/praneeth.jpg",
+                "name": "Praneeth Otthi",
+                "role": "Physics Instructor",
+                "email": "potthi2@nastudents.org",
+                "fadeDelay": 0.3
+            },
+            {
+                "image": "images/neelansh.png",
+                "name": "Neelansh Samanta",
+                "role": "Biology Instructor",
+                "email": "nsamanta@nastudents.org",
+                "fadeDelay": 0.3
+            },
+            {
+                "image": "images/person.png",
+                "name": "Rishan Abishek",
+                "role": "Chemistry Instructor",
+                "email": "rabishek@nastudents.org",
+                "fadeDelay": 0.3
+            },
+            {
+                "image": "images/ayush.jpg",
+                "name": "Ayush Srivastava",
+                "role": "Virtual Chess Teacher",
+                "email": "asrivastava@nastudents.org",
+                "fadeDelay": 0.3
+            },
+            {
                 "image": "images/alex.jpg",
                 "name": "Alex Du",
-                "role": "Level 1 Teacher",
+                "role": "Level 1 Chess Teacher",
                 "email": "adu@nastudents.org",
                 "fadeDelay": 0.1
             },
             {
                 "image": "images/marco.jpg",
                 "name": "Marco Calso Sarabia",
-                "role": "Level 1 Currciulum Designer",
+                "role": "Level 1 Chess Currciulum Designer",
                 "email": "mcalsosarabia@nastudents.org",
                 "fadeDelay": 0.5
             },
             {
                 "image": "images/jonathan.jpg",
                 "name": "Jonathan Uh",
-                "role": "Level 1 Teacher",
+                "role": "Level 1 Chess Teacher",
                 "email": "juh@nastudents.org",
                 "fadeDelay": 0.7
             },
             {
                 "image": "images/matthew.jpg",
                 "name": "Matthew Guo",
-                "role": "Level 1 Teacher",
+                "role": "Level 1 Chess Teacher",
                 "email": "cguo@nastudents.org",
                 "fadeDelay": 0.7
             },
             {
                 "image": "images/max.png",
                 "name": "Max Fang",
-                "role": "Level 1 Curriculum Designer, Level 2 Teacher",
+                "role": "Level 1 Chess Curriculum Designer, Level 2 Chess Teacher",
                 "email": "mfang@nastudents.org",
                 "fadeDelay": 0.5
             },
             {
-                "image": "images/kaartic.jpeg",
-                "name": "Kaartic Muralidharan",
-                "role": "Level 2 Teacher and Curriculum Designer",
-                "email": "kmuralidharan@nastudents.org",
-                "fadeDelay": 0.3
-            },
-            {
                 "image": "images/rishabh.jpg",
                 "name": "Rishabh Udeshi",
-                "role": "Level 2 Teacher and Currciulum Designer",
+                "role": "Level 2 Chess Teacher and Currciulum Designer, Virtual Chess Teacher",
                 "email": "rudeshi@nastudents.org",
                 "fadeDelay": 0.3
             },
             {
                 "image": "images/jason.jpg",
                 "name": "Jason Liu",
-                "role": "Level 2 Curriculum Designer",
+                "role": "Level 2 Chess Curriculum Designer",
                 "email": "jliu@nastudents.org",
                 "fadeDelay": 0.7
             }
