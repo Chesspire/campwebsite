@@ -104,6 +104,13 @@
                 "fadeDelay": 0.3
             },
             {
+                "image": "images/thea.jpg",
+                "name": "Thea Cross",
+                "role": "Cognitive Science Instructor",
+                "email": "do-not-reply@chesspire.org",
+                "fadeDelay": 0.3
+            },
+            {
                 "image": "images/neelansh.png",
                 "name": "Neelansh Samanta",
                 "role": "Biology Instructor",
