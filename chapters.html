@@ -128,6 +128,18 @@
      <!-- Navbar -->
     <div role="navigation" class="container-fluid position-relative p-0" id="navbar">
     </div>
+    <script>
+        fetch("navbar.html").then(resp => {
+        resp.text()
+        .then(data => {
+            document.querySelector("#navbar").innerHTML = data;
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            ); 
+        })
+        })
+    </script>
 
     <div class="container pb-3 wow fadeInUp" data-wow-delay="0.1s" style="text-align: center;">
         <h1 class="mb-4">Chapters</h1>

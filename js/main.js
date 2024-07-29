@@ -61,17 +61,17 @@
             document.body.style.top = 0;
         }, 100)
 
-        fetch("navbar.html").then(resp => {
-            resp.text()
-            .then(data => {
-                document.querySelector("#navbar").innerHTML = data;
-                new google.translate.TranslateElement(
-                    {pageLanguage: 'en'},
-                    'google_translate_element'
-                );
+        // fetch("navbar.html").then(resp => {
+        //     resp.text()
+        //     .then(data => {
+        //         document.querySelector("#navbar").innerHTML = data;
+        //         new google.translate.TranslateElement(
+        //             {pageLanguage: 'en'},
+        //             'google_translate_element'
+        //         );
                 
-            })
-        })
+        //     })
+        // })
     if (window.location.pathname == "/pastcamps.html") {
         setInterval(() => {
             let carousels = document.getElementsByClassName("carousel")
