@@ -63,7 +63,7 @@
     font-family: 'Nunito', sans-serif;
     position: relative;
     margin-right: 25px;
-    padding: 35px 0;
+    /* padding: 35px 0; */
     color: #FFFFFF !important;
     font-size: 18px;
     font-weight: 600;
@@ -73,7 +73,7 @@
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
-    padding: 20px 0;
+    /* padding: 20px 0; */
     color: var(--dark) !important;
 }
 
@@ -545,6 +545,26 @@ body > .skiptranslate {
     border-color: var(--primary);
 }
 
-.nav-item:hover {
+ m:hover {
     cursor: pointer;
+}
+
+.past-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.service-item-2 {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.bottom-link {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
