@@ -111,13 +111,6 @@
                 "fadeDelay": 0.3
             },
             {
-                "image": "images/neelansh.png",
-                "name": "Neelansh Samanta",
-                "role": "Biology Instructor",
-                "email": "nsamanta@nastudents.org",
-                "fadeDelay": 0.3
-            },
-            {
                 "image": "images/person.png",
                 "name": "Rishan Abishek",
                 "role": "Chemistry Instructor",
