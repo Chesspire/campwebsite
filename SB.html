@@ -1,0 +1,750 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Science Bowl Practice App</title>
+  <!-- Using local icon named chemistry.png -->
+  <link rel="icon" type="image/png" href="chemistry.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    #controls, #scoreAdjust, #questionBanks, #tally, #history {
+      background: #ecf0f1;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    #questionInput {
+      width: 100%;
+      height: 150px;
+      font-size: 14px;
+      padding: 5px;
+    }
+    #questionDisplay {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      min-height: 80px;
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #34495e;
+      white-space: pre-wrap;
+    }
+    #answerSection {
+      margin-bottom: 20px;
+    }
+    #answerInput {
+      width: 80%;
+      font-size: 18px;
+      padding: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #scoreDisplay, #interruptStats {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    #timer {
+      font-size: 18px;
+      margin-left: 15px;
+      color: #27ae60;
+    }
+    /* Tally buttons (do not affect score) */
+    #tallyButtons button {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    #renameInputs input {
+      width: 50px;
+      margin-right: 5px;
+    }
+    /* Question Bank List */
+    .bankItem {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .bankItem button {
+      margin-right: 5px;
+    }
+    .bankName {
+      flex: 1;
+      cursor: pointer;
+    }
+    .bankActions button {
+      margin-left: 3px;
+    }
+    /* History group headers with reorder buttons */
+    .historyGroupHeader {
+      background: #bdc3c7;
+      padding: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .historyGroupHeader span {
+      flex: 1;
+    }
+    .historyGroupEntries {
+      display: none;
+      padding-left: 10px;
+    }
+    .reorderButtons button {
+      padding: 2px 5px;
+      margin-left: 5px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Science Bowl Practice App</h1>
+  
+  <!-- Controls Section -->
+  <div id="controls">
+    <h3>Load a New Question Bank</h3>
+    <textarea id="questionInput" placeholder="Paste your questions here..."></textarea>
+    <br>
+    <button id="loadQuestions">Load Questions & Save Bank</button>
+    <button id="randomizeBtn">Randomize Questions</button>
+    <br><br>
+    <label for="speedSlider">Word Speed (ms per word, lower is faster): </label>
+    <input type="range" id="speedSlider" min="50" max="1000" value="500">
+    <span id="speedDisplay">500</span> ms
+    <br><br>
+    <!-- Score adjustment buttons -->
+    <button id="skipQuestion">Skip Question</button>
+    <button id="scorePlus">Score +4</button>
+    <button id="scoreMinus">Score -4</button>
+    <button id="manualAdjust">Manual Adjust Points</button>
+    <input type="number" id="pointAdjustment" value="0">
+    <span>(Enter a positive or negative number)</span>
+    <br><br>
+    <!-- Timer with Pause/Resume (pausing reading/auto-submission) -->
+    <span id="timer">Timer: 0.000s</span>
+    <button id="pauseTimerBtn">Pause</button>
+  </div>
+  
+  <!-- Question Bank List Section -->
+  <div id="questionBanks">
+    <h3>Saved Question Banks</h3>
+    <div id="bankList"></div>
+  </div>
+  
+  <!-- Question Display & Answer Section -->
+  <div id="questionDisplay"></div>
+  
+  <div id="answerSection" style="display:none;">
+    <input type="text" id="answerInput" placeholder="Type your answer here" />
+    <button id="submitAnswer">Submit Answer</button>
+  </div>
+  
+  <div id="scoreDisplay">Score: 0</div>
+  <div id="interruptStats">Interrupts Correct: 0 | Interrupts Wrong: 0</div>
+  
+  <!-- Tally Buttons (placed above history) -->
+  <div id="tally">
+    <h3>Tally Buttons (These do not affect score)</h3>
+    <div id="tallyButtons">
+      <button class="tallyButton" data-label="I">I: <span class="tallyCount">0</span></button>
+      <button class="tallyButton" data-label="T">T: <span class="tallyCount">0</span></button>
+      <button class="tallyButton" data-label="B">B: <span class="tallyCount">0</span></button>
+      <button class="tallyButton" data-label="W">W: <span class="tallyCount">0</span></button>
+      <button class="tallyButton" data-label="O">O: <span class="tallyCount">0</span></button>
+    </div>
+    <p>Rename buttons:</p>
+    <div id="renameInputs">
+      <input type="text" id="renameI" placeholder="Rename I" value="I">
+      <input type="text" id="renameT" placeholder="Rename T" value="T">
+      <input type="text" id="renameB" placeholder="Rename B" value="B">
+      <input type="text" id="renameW" placeholder="Rename W" value="W">
+      <input type="text" id="renameO" placeholder="Rename O" value="O">
+      <button id="renameButton">Rename</button>
+    </div>
+  </div>
+  
+  <!-- History Section (grouped by bank with reorder buttons) -->
+  <div id="history">
+    <h3>Question History</h3>
+    <div id="historyContent"></div>
+  </div>
+  
+  <script>
+    // Global Variables
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let currentWords = [];
+    let currentWordIndex = 0;
+    let wordInterval = null;
+    let score = 0;
+    let readingStarted = false;
+    let autoTimerInterval = null;
+    let autoSubmitTimer = null;
+    let readingFinishTime = 0;
+    let autoThreshold = 0; // ms until auto-submit
+    let isPaused = false;
+    let pausePhase = ""; // "reading" or "auto"
+    let pausedReadingIndex = 0;
+    let pausedAutoRemaining = 0;
+    let interruptCorrect = 0;
+    let interruptWrong = 0;
+    
+    // For Question Bank management
+    let currentBankId = null;
+    let currentBankName = "";
+    
+    // History storage (persisted via localStorage)
+    let historyEntries = [];
+    // Maintain manual order of history banks (array of bank IDs)
+    let historyBankOrder = [];
+    
+    // DOM Elements
+    const questionInputEl = document.getElementById('questionInput');
+    const loadQuestionsBtn = document.getElementById('loadQuestions');
+    const randomizeBtn = document.getElementById('randomizeBtn');
+    const speedSlider = document.getElementById('speedSlider');
+    const speedDisplay = document.getElementById('speedDisplay');
+    const questionDisplay = document.getElementById('questionDisplay');
+    const answerSection = document.getElementById('answerSection');
+    const answerInput = document.getElementById('answerInput');
+    const submitAnswerBtn = document.getElementById('submitAnswer');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const interruptStatsDisplay = document.getElementById('interruptStats');
+    const timerDisplay = document.getElementById('timer');
+    const pauseTimerBtn = document.getElementById('pauseTimerBtn');
+    const skipQuestionBtn = document.getElementById('skipQuestion');
+    const scorePlusBtn = document.getElementById('scorePlus');
+    const scoreMinusBtn = document.getElementById('scoreMinus');
+    const manualAdjustBtn = document.getElementById('manualAdjust');
+    const pointAdjustmentInput = document.getElementById('pointAdjustment');
+    const bankListDiv = document.getElementById('bankList');
+    const historyContentDiv = document.getElementById('historyContent');
+    const tallyButtons = document.querySelectorAll('.tallyButton');
+    const renameButton = document.getElementById('renameButton');
+    const renameI = document.getElementById('renameI');
+    const renameT = document.getElementById('renameT');
+    const renameB = document.getElementById('renameB');
+    const renameW = document.getElementById('renameW');
+    const renameO = document.getElementById('renameO');
+    
+    // On page load, restore history, bank order, and question banks from localStorage
+    window.addEventListener('load', () => {
+      const storedHistory = localStorage.getItem('questionHistory');
+      if (storedHistory) {
+        historyEntries = JSON.parse(storedHistory);
+      }
+      const storedOrder = localStorage.getItem('historyBankOrder');
+      if (storedOrder) {
+        historyBankOrder = JSON.parse(storedOrder);
+      }
+      renderHistory();
+      loadQuestionBanks();
+    });
+    
+    // Speed Slider: update display and adjust reading speed immediately if reading is active
+    speedSlider.addEventListener('input', () => {
+      speedDisplay.textContent = speedSlider.value;
+      if (readingStarted && !isPaused && pausePhase === "reading") {
+        clearInterval(wordInterval);
+        wordInterval = setInterval(displayNextWord, speedSlider.value);
+      }
+    });
+    
+    // Pause/Resume Button: pauses the current phase (reading or auto)
+    pauseTimerBtn.addEventListener('click', () => {
+      if (!isPaused) {
+        // Pause current phase
+        if (readingStarted) {
+          // Pause reading
+          clearInterval(wordInterval);
+          pausedReadingIndex = currentWordIndex;
+          pausePhase = "reading";
+        } else {
+          // Pause auto phase
+          let elapsed = performance.now() - readingFinishTime;
+          pausedAutoRemaining = autoThreshold - elapsed;
+          clearInterval(autoTimerInterval);
+          clearTimeout(autoSubmitTimer);
+          pausePhase = "auto";
+        }
+        isPaused = true;
+        pauseTimerBtn.textContent = "Resume";
+      } else {
+        // Resume paused phase
+        if (pausePhase === "reading") {
+          currentWordIndex = pausedReadingIndex;
+          wordInterval = setInterval(displayNextWord, speedSlider.value);
+        } else if (pausePhase === "auto") {
+          readingFinishTime = performance.now() - (autoThreshold - pausedAutoRemaining);
+          autoTimerInterval = setInterval(() => {
+            let elapsed = (performance.now() - readingFinishTime) / 1000;
+            timerDisplay.textContent = "Timer: " + elapsed.toFixed(3) + "s";
+          }, 50);
+          autoSubmitTimer = setTimeout(autoSubmit, pausedAutoRemaining);
+        }
+        isPaused = false;
+        pauseTimerBtn.textContent = "Pause";
+      }
+    });
+    
+    // Flexible Parser: supports multiple formats.
+    function parseQuestions(text) {
+      const rawLines = text.split('\n');
+      let lines = [];
+      for (let line of rawLines) {
+        let cleaned = line.replace(/\*\*/g, '').trim();
+        if (!cleaned) continue;
+        if (cleaned === '---') continue;
+        if (/challenging science bowl/i.test(cleaned)) continue;
+        if (/end of document/i.test(cleaned)) continue;
+        lines.push(cleaned);
+      }
+      let parsed = [];
+      let i = 0;
+      const tossUpBonusRegex = /^(\d+\)?\s*)?(TOSS-UP|BONUS)(.*)$/i;
+      while (i < lines.length) {
+        let line = lines[i];
+        let match = line.match(tossUpBonusRegex);
+        if (match) {
+          let type = match[2].toUpperCase();
+          let header = match[3].trim();
+          if (!header && i + 1 < lines.length) { header = lines[i+1]; i++; }
+          i++;
+          let questionText = "";
+          while (i < lines.length && !/^ANSWER:/i.test(lines[i])) {
+            questionText += lines[i] + " ";
+            i++;
+          }
+          questionText = questionText.trim();
+          let answer = "";
+          if (i < lines.length && /^ANSWER:/i.test(lines[i])) {
+            answer = lines[i].replace(/^ANSWER:\s*/i, '').trim();
+            i++;
+          }
+          parsed.push({
+            type: type,
+            header: header,
+            questionText: questionText,
+            answer: answer
+          });
+        } else {
+          i++;
+        }
+      }
+      return parsed;
+    }
+    
+    // --- Question Bank Management ---
+    function loadQuestionBanks() {
+      const storedBanks = localStorage.getItem('questionBanks');
+      let banks = storedBanks ? JSON.parse(storedBanks) : [];
+      renderBankList(banks);
+    }
+    
+    function saveNewBank(text) {
+      const storedBanks = localStorage.getItem('questionBanks');
+      let banks = storedBanks ? JSON.parse(storedBanks) : [];
+      const newId = "bank-" + Date.now();
+      const defaultName = "Bank " + new Date().toLocaleString();
+      const newBank = { id: newId, name: defaultName, text: text };
+      banks.push(newBank);
+      localStorage.setItem('questionBanks', JSON.stringify(banks));
+      loadQuestionBanks();
+      return newBank;
+    }
+    
+    function renderBankList(banks) {
+      bankListDiv.innerHTML = "";
+      banks.forEach(bank => {
+        const div = document.createElement('div');
+        div.className = "bankItem";
+        const btn = document.createElement('button');
+        btn.textContent = bank.name;
+        btn.className = "bankName";
+        btn.addEventListener('click', () => loadBank(bank));
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = "bankActions";
+        const renameBtn = document.createElement('button');
+        renameBtn.textContent = "Rename";
+        renameBtn.addEventListener('click', () => {
+          let newName = prompt("Enter new name for this bank:", bank.name);
+          if (newName) {
+            // Update bank name in bank list...
+            bank.name = newName;
+            updateBank(bank);
+            // Also update all history entries for this bank:
+            historyEntries.forEach(entry => {
+              if(entry.bankId === bank.id) { entry.bank = newName; }
+            });
+            localStorage.setItem('questionHistory', JSON.stringify(historyEntries));
+            renderHistory();
+          }
+        });
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = "Delete";
+        deleteBtn.addEventListener('click', () => {
+          if (confirm("Delete this question bank?")) { deleteBank(bank.id); }
+        });
+        actionsDiv.appendChild(renameBtn);
+        actionsDiv.appendChild(deleteBtn);
+        div.appendChild(btn);
+        div.appendChild(actionsDiv);
+        bankListDiv.appendChild(div);
+      });
+    }
+    
+    function updateBank(updatedBank) {
+      const storedBanks = localStorage.getItem('questionBanks');
+      let banks = storedBanks ? JSON.parse(storedBanks) : [];
+      banks = banks.map(bank => bank.id === updatedBank.id ? updatedBank : bank);
+      localStorage.setItem('questionBanks', JSON.stringify(banks));
+      loadQuestionBanks();
+    }
+    
+    function deleteBank(bankId) {
+      const storedBanks = localStorage.getItem('questionBanks');
+      let banks = storedBanks ? JSON.parse(storedBanks) : [];
+      banks = banks.filter(bank => bank.id !== bankId);
+      localStorage.setItem('questionBanks', JSON.stringify(banks));
+      loadQuestionBanks();
+    }
+    
+    function loadBank(bank) {
+      currentBankId = bank.id;
+      currentBankName = bank.name;
+      questions = parseQuestions(bank.text);
+      currentQuestionIndex = 0;
+      score = 0;
+      interruptCorrect = 0;
+      interruptWrong = 0;
+      updateScore();
+      updateInterruptStats();
+      nextQuestion();
+    }
+    
+    loadQuestionsBtn.addEventListener('click', () => {
+      const text = questionInputEl.value;
+      if (!text.trim()) { alert("Please paste some questions first."); return; }
+      const newBank = saveNewBank(text);
+      currentBankId = newBank.id;
+      currentBankName = newBank.name;
+      questions = parseQuestions(text);
+      currentQuestionIndex = 0;
+      score = 0;
+      interruptCorrect = 0;
+      interruptWrong = 0;
+      updateScore();
+      updateInterruptStats();
+      nextQuestion();
+      questionInputEl.value = "";
+    });
+    
+    randomizeBtn.addEventListener('click', () => {
+      questions = shuffleArray(questions);
+      currentQuestionIndex = 0;
+      nextQuestion();
+    });
+    
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+    
+    // --- Reading & Answering ---
+    function nextQuestion() {
+      if (currentQuestionIndex >= questions.length) { alert("All questions done!"); return; }
+      clearInterval(wordInterval);
+      clearInterval(autoTimerInterval);
+      clearTimeout(autoSubmitTimer);
+      isPaused = false;
+      pauseTimerBtn.textContent = "Pause";
+      readingStarted = true;
+      answerSection.style.display = "none";
+      answerInput.value = "";
+      // Build header info:
+      const currentQuestion = questions[currentQuestionIndex];
+      // Extract category from header (take text before " - " if present)
+      let category = currentQuestion.header.split(" - ")[0];
+      // Also number the question in the set.
+      let numberInfo = "Question " + (currentQuestionIndex + 1) + "/" + questions.length;
+      // Display header info before reading:
+      questionDisplay.textContent = numberInfo + "\n" + currentQuestion.type + " " + currentQuestion.header + "\n\n";
+      timerDisplay.textContent = "Timer: 0.000s";
+      
+      currentWords = currentQuestion.questionText.split(/\s+/);
+      currentWordIndex = 0;
+      wordInterval = setInterval(displayNextWord, speedSlider.value);
+    }
+    
+    function displayNextWord() {
+      if (currentWordIndex < currentWords.length) {
+        questionDisplay.textContent += currentWords[currentWordIndex] + " ";
+        currentWordIndex++;
+      } else {
+        clearInterval(wordInterval);
+        readingStarted = false;
+        readingFinishTime = performance.now();
+        autoThreshold = (questions[currentQuestionIndex].type === "TOSS-UP") ? 5000 : 20000;
+        autoTimerInterval = setInterval(() => {
+          let elapsed = (performance.now() - readingFinishTime) / 1000;
+          timerDisplay.textContent = "Timer: " + elapsed.toFixed(3) + "s";
+        }, 50);
+        answerSection.style.display = "block";
+        answerInput.focus();
+        autoSubmitTimer = setTimeout(autoSubmit, autoThreshold);
+      }
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.code === "Space") {
+        if (readingStarted) {
+          clearInterval(wordInterval);
+          readingStarted = false;
+          clearInterval(autoTimerInterval);
+          clearTimeout(autoSubmitTimer);
+          answerSection.style.display = "block";
+          answerInput.focus();
+        }
+      }
+    });
+    
+    function submitAnswer(auto = false) {
+      clearInterval(autoTimerInterval);
+      clearTimeout(autoSubmitTimer);
+      
+      const userAnswer = answerInput.value.trim();
+      const currentQuestion = questions[currentQuestionIndex];
+      const expectedAnswer = currentQuestion.answer.trim();
+      const result = checkAnswer(userAnswer, expectedAnswer);
+      
+      let wasInterrupt = (currentWordIndex < currentWords.length);
+      if (wasInterrupt) {
+        if (result.correct || result.near) { interruptCorrect++; }
+        else { interruptWrong++; }
+        updateInterruptStats();
+      }
+      
+      if (wasInterrupt && !(result.correct || result.near)) { score -= 4; }
+      else if (result.correct || result.near) { score += 4; }
+      
+      updateScore();
+      addHistory(currentQuestion, userAnswer, result, auto);
+      currentQuestionIndex++;
+      questionDisplay.textContent = "";
+      answerSection.style.display = "none";
+      timerDisplay.textContent = "Timer: 0.000s";
+      nextQuestion();
+    }
+    
+    function autoSubmit() {
+      clearInterval(autoTimerInterval);
+      questionDisplay.textContent += "\nTime's up! Correct Answer: " + questions[currentQuestionIndex].answer;
+      setTimeout(() => { answerInput.value = ""; submitAnswer(true); }, 1000);
+    }
+    
+    function checkAnswer(user, expected) {
+      let u = user.toLowerCase().replace(/[^\w]/g, "").trim();
+      let e = expected.toLowerCase().replace(/[^\w]/g, "").trim();
+      let mcMatch = expected.match(/^([A-Z])\)/i);
+      if (mcMatch && /^[A-Z]$/i.test(user)) {
+        if (mcMatch[1].toUpperCase() === user.toUpperCase()) { return { correct: true, near: false }; }
+      }
+      if (u === e) { return { correct: true, near: false }; }
+      const distance = levenshtein(u, e);
+      const threshold = Math.floor(e.length * 0.3);
+      if (distance <= threshold) { return { correct: false, near: true }; }
+      return { correct: false, near: false };
+    }
+    
+    function levenshtein(a, b) {
+      const matrix = [];
+      for (let i = 0; i <= b.length; i++) { matrix[i] = [i]; }
+      for (let j = 0; j <= a.length; j++) { matrix[0][j] = j; }
+      for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+          if (b.charAt(i - 1) === a.charAt(j - 1)) { matrix[i][j] = matrix[i - 1][j - 1]; }
+          else {
+            matrix[i][j] = Math.min(
+              matrix[i - 1][j - 1] + 1,
+              Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
+            );
+          }
+        }
+      }
+      return matrix[b.length][a.length];
+    }
+    
+    function updateScore() { scoreDisplay.textContent = "Score: " + score; }
+    function updateInterruptStats() { interruptStatsDisplay.textContent = "Interrupts Correct: " + interruptCorrect + " | Interrupts Wrong: " + interruptWrong; }
+    
+    function addHistory(question, userAnswer, result, auto) {
+      const entry = {
+        bankId: currentBankId,
+        bank: currentBankName || "Uncategorized",
+        type: question.type,
+        header: question.header,
+        questionText: question.questionText,
+        userAnswer: userAnswer || (auto ? "[Timed Out]" : "[No Answer]"),
+        expected: question.answer,
+        result: result.correct ? "Correct" : (result.near ? "Near Match" : "Incorrect"),
+        timestamp: Date.now()
+      };
+      historyEntries.push(entry);
+      localStorage.setItem('questionHistory', JSON.stringify(historyEntries));
+      renderHistory();
+    }
+    
+    // --- History Rendering & Reordering ---
+    function renderHistory() {
+      // Group entries by bank ID.
+      let groups = {};
+      historyEntries.forEach(entry => {
+        if (!groups[entry.bankId]) groups[entry.bankId] = [];
+        groups[entry.bankId].push(entry);
+      });
+      // Sort each group descending by timestamp.
+      for (let bankId in groups) {
+        groups[bankId].sort((a, b) => b.timestamp - a.timestamp);
+      }
+      // Determine order: use historyBankOrder array; add any banks not in it.
+      let bankIds = Object.keys(groups);
+      historyBankOrder = historyBankOrder.filter(id => bankIds.includes(id));
+      bankIds.forEach(id => { if (!historyBankOrder.includes(id)) historyBankOrder.push(id); });
+      
+      // Save order.
+      localStorage.setItem('historyBankOrder', JSON.stringify(historyBankOrder));
+      
+      // Render groups in order.
+      historyContentDiv.innerHTML = "";
+      historyBankOrder.forEach(bankId => {
+        if (!groups[bankId]) return;
+        const groupEntries = groups[bankId];
+        // Create header with bank name and reorder buttons.
+        const header = document.createElement('div');
+        header.className = "historyGroupHeader";
+        const headerText = document.createElement('span');
+        headerText.textContent = groupEntries[0].bank + " (" + groupEntries.length + " entries)";
+        header.appendChild(headerText);
+        const reorderDiv = document.createElement('div');
+        reorderDiv.className = "reorderButtons";
+        const upBtn = document.createElement('button');
+        upBtn.textContent = "↑";
+        upBtn.addEventListener('click', () => { reorderHistoryBank(bankId, -1); });
+        const downBtn = document.createElement('button');
+        downBtn.textContent = "↓";
+        downBtn.addEventListener('click', () => { reorderHistoryBank(bankId, 1); });
+        reorderDiv.appendChild(upBtn);
+        reorderDiv.appendChild(downBtn);
+        header.appendChild(reorderDiv);
+        header.addEventListener('click', () => {
+          const entriesDiv = header.nextElementSibling;
+          entriesDiv.style.display = entriesDiv.style.display === "none" ? "block" : "none";
+        });
+        const entriesDiv = document.createElement('div');
+        entriesDiv.className = "historyGroupEntries";
+        groupEntries.forEach(entry => {
+          const div = document.createElement("div");
+          div.innerHTML = `<strong>${entry.type}:</strong> ${entry.header}<br>
+                          <em>Q:</em> ${entry.questionText}<br>
+                          <em>Your answer:</em> ${entry.userAnswer} | <em>Expected:</em> ${entry.expected}<br>
+                          <em>Result:</em> ${entry.result} <small>${new Date(entry.timestamp).toLocaleString()}</small>`;
+          div.style.borderBottom = "1px solid #ccc";
+          div.style.marginBottom = "5px";
+          entriesDiv.appendChild(div);
+        });
+        // Initially show group entries.
+        entriesDiv.style.display = "block";
+        historyContentDiv.appendChild(header);
+        historyContentDiv.appendChild(entriesDiv);
+      });
+    }
+    
+    function reorderHistoryBank(bankId, direction) {
+      const index = historyBankOrder.indexOf(bankId);
+      if (index < 0) return;
+      const newIndex = index + direction;
+      if (newIndex < 0 || newIndex >= historyBankOrder.length) return;
+      // Swap positions.
+      [historyBankOrder[index], historyBankOrder[newIndex]] = [historyBankOrder[newIndex], historyBankOrder[index]];
+      localStorage.setItem('historyBankOrder', JSON.stringify(historyBankOrder));
+      renderHistory();
+    }
+    
+    // --- Skip and Score Adjustment ---
+    skipQuestionBtn.addEventListener('click', () => {
+      clearInterval(wordInterval);
+      clearInterval(autoTimerInterval);
+      clearTimeout(autoSubmitTimer);
+      score -= 4;
+      updateScore();
+      addHistory(questions[currentQuestionIndex], "[Skipped]", { correct: false, near: false });
+      currentQuestionIndex++;
+      questionDisplay.textContent = "";
+      answerSection.style.display = "none";
+      timerDisplay.textContent = "Timer: 0.000s";
+      nextQuestion();
+    });
+    
+    manualAdjustBtn.addEventListener('click', () => {
+      const adjustment = parseInt(pointAdjustmentInput.value, 10);
+      if (!isNaN(adjustment)) { score += adjustment; updateScore(); }
+    });
+    
+    scorePlusBtn.addEventListener('click', () => { score += 4; updateScore(); });
+    scoreMinusBtn.addEventListener('click', () => { score -= 4; updateScore(); });
+    
+    submitAnswerBtn.addEventListener('click', () => { submitAnswer(); });
+    answerInput.addEventListener('keypress', (e) => { if (e.key === "Enter") { submitAnswer(); } });
+    
+    // --- Tally Buttons (do not affect score) ---
+    tallyButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        let countSpan = btn.querySelector('.tallyCount');
+        let count = parseInt(countSpan.textContent, 10);
+        count++;
+        countSpan.textContent = count;
+      });
+      btn.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        let countSpan = btn.querySelector('.tallyCount');
+        let count = parseInt(countSpan.textContent, 10);
+        count--;
+        countSpan.textContent = count;
+      });
+    });
+    
+    // Rename tally buttons.
+    renameButton.addEventListener('click', () => {
+      const newLabels = [renameI.value.trim(), renameT.value.trim(), renameB.value.trim(), renameW.value.trim(), renameO.value.trim()];
+      const buttons = document.querySelectorAll('#tallyButtons .tallyButton');
+      buttons.forEach((btn, index) => {
+        btn.dataset.label = newLabels[index];
+        let count = btn.querySelector('.tallyCount').textContent;
+        btn.innerHTML = newLabels[index] + ": <span class='tallyCount'>" + count + "</span>";
+      });
+    });
+  </script>
+</body>
+</html>
