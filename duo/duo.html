@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NSDA Duo Practice App</title>
+  <title>NSDA Duo Practice App (Local)</title>
   <link rel="stylesheet" href="duo-style.css">
 </head>
-<body class="theme-light">
+<body class="theme-dark">
   <header>
-    <h1>NSDA Duo Practice App</h1>
+    <h1>NSDA Duo Practice App (Local)</h1>
     <div id="theme-selector">
       <label for="theme">Theme:</label>
       <select id="theme">
@@ -26,6 +26,14 @@
         <textarea id="script-content" placeholder="Paste your script here (each line as 'Character: Dialogue')" required></textarea>
         <button type="submit">Save Script</button>
       </form>
+      <div id="script-search">
+        <input type="text" id="search-query" placeholder="Search script lines">
+        <button id="clear-search">Clear Search</button>
+      </div>
+      <div id="file-operations">
+        <button id="export-scripts">Export Scripts</button>
+        <input type="file" id="import-scripts" accept=".txt,.json">
+      </div>
       <ul id="scripts-list"></ul>
     </section>
     <!-- Practice Session Section -->
@@ -39,13 +47,46 @@
         <h3>TTS Settings</h3>
         <label for="voice-select">Voice:</label>
         <select id="voice-select"></select>
+        <label>
+          <input type="checkbox" id="tts-toggle" checked>
+          Enable TTS
+        </label>
+        <label>
+          <input type="checkbox" id="pause-tts">
+          Pause/Resume TTS
+        </label>
       </div>
       <div id="practice-controls">
         <button id="start-practice">Start Practice</button>
-        <button id="next-line" disabled>Next Line (Spacebar)</button>
+        <button id="prev-line">Previous Line (J)</button>
+        <button id="next-line" disabled>Next Line (K/Spacebar)</button>
+        <button id="replay-line">Replay Current Line</button>
+        <button id="reset-practice">Reset Practice</button>
+        <button id="view-log">View Practice Log</button>
+        <button id="download-log">Download Log as CSV</button>
+        <button id="clear-log">Clear Practice Log</button>
+        <button id="bookmark-line">Bookmark Current Line</button>
+        <button id="view-bookmarks">View Bookmarks</button>
+        <button id="jump-to-bookmark">Jump to Bookmark</button>
+        <button id="clear-bookmark">Clear Bookmark</button>
+        <button id="toggle-fullscreen">Toggle Fullscreen</button>
+        <label>
+          <input type="checkbox" id="auto-advance">
+          Auto Advance
+        </label>
+        <label>
+          <input type="checkbox" id="show-line-numbers" checked>
+          Show Line Numbers
+        </label>
       </div>
       <div id="timer">
         <h3>Timer: <span id="time-remaining">0</span> seconds</h3>
+        <button id="toggle-timer">Start Timer</button>
+        <label>
+          Extra Time Limit:
+          <input type="range" id="timer-limit" min="0" max="10" step="1" value="5">
+          <span id="timer-limit-display">5</span>s
+        </label>
       </div>
       <div id="recording">
         <h3>Recording (Optional)</h3>
