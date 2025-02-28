@@ -19,18 +19,44 @@ body {
     padding: 1em;
     flex: 1 1 400px;
   }
+  
+  /* Light Mode */
   .theme-light {
     background-color: #fff;
     color: #000;
   }
+  
+  /* Improved Dark Mode */
   .theme-dark {
-    background-color: #333;
-    color: #fff;
+    background: #1e1e1e;
+    color: #e0e0e0;
   }
+  .theme-dark header {
+    background: #292929;
+  }
+  .theme-dark section {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .theme-dark button {
+    background-color: #444;
+    color: #e0e0e0;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    cursor: pointer;
+  }
+  .theme-dark button:hover {
+    background-color: #555;
+  }
+  
+  /* Gold Theme */
   .theme-gold {
     background-color: #ffd700;
     color: #000;
   }
+  
   #scripts-list li {
     border-bottom: 1px solid #ccc;
     padding: 0.5em 0;
@@ -43,5 +69,18 @@ body {
     width: 100%;
     height: 20px;
     margin-top: 1em;
+  }
+  #file-operations {
+    margin: 1em 0;
+  }
+  label {
+    margin-right: 1em;
+  }
+  #script-search {
+    margin: 1em 0;
+  }
+  #script-search input {
+    padding: 0.5em;
+    width: 70%;
   }
   
