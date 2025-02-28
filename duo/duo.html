@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NSDA Duo Practice App</title>
+  <link rel="stylesheet" href="duo-style.css">
+</head>
+<body class="theme-light">
+  <header>
+    <h1>NSDA Duo Practice App</h1>
+    <div id="theme-selector">
+      <label for="theme">Theme:</label>
+      <select id="theme">
+        <option value="theme-light">Light</option>
+        <option value="theme-dark">Dark</option>
+        <option value="theme-gold">Gold</option>
+      </select>
+    </div>
+  </header>
+  <main>
+    <!-- Script Manager Section -->
+    <section id="script-manager">
+      <h2>Manage Scripts</h2>
+      <form id="new-script-form">
+        <input type="text" id="script-name" placeholder="Script name" required>
+        <textarea id="script-content" placeholder="Paste your script here (each line as 'Character: Dialogue')" required></textarea>
+        <button type="submit">Save Script</button>
+      </form>
+      <ul id="scripts-list"></ul>
+    </section>
+    <!-- Practice Session Section -->
+    <section id="practice-area">
+      <h2>Practice Session</h2>
+      <div id="character-selection">
+        <h3>Select Characters to Practice</h3>
+        <div id="character-checkboxes"></div>
+      </div>
+      <div id="tts-controls">
+        <h3>TTS Settings</h3>
+        <label for="voice-select">Voice:</label>
+        <select id="voice-select"></select>
+      </div>
+      <div id="practice-controls">
+        <button id="start-practice">Start Practice</button>
+        <button id="next-line" disabled>Next Line (Spacebar)</button>
+      </div>
+      <div id="timer">
+        <h3>Timer: <span id="time-remaining">0</span> seconds</h3>
+      </div>
+      <div id="recording">
+        <h3>Recording (Optional)</h3>
+        <button id="start-recording">Start Recording</button>
+        <button id="stop-recording" disabled>Stop Recording</button>
+        <div id="recording-status"></div>
+      </div>
+      <div id="practice-display">
+        <p id="current-line"></p>
+      </div>
+      <!-- Additional Feature: Progress Bar -->
+      <progress id="progress-bar" max="100" value="0"></progress>
+      <!-- Additional Feature: Mark Difficult Lines -->
+      <div id="difficult-control">
+        <button id="mark-difficult">Mark as Difficult</button>
+      </div>
+    </section>
+  </main>
+  <script src="duo-script.js"></script>
+</body>
+</html>
