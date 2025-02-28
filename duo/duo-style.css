@@ -1,0 +1,47 @@
+﻿/* Base styling and theme presets */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    padding: 1em;
+    text-align: center;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 1em;
+  }
+  section {
+    border: 1px solid #ccc;
+    padding: 1em;
+    flex: 1 1 400px;
+  }
+  .theme-light {
+    background-color: #fff;
+    color: #000;
+  }
+  .theme-dark {
+    background-color: #333;
+    color: #fff;
+  }
+  .theme-gold {
+    background-color: #ffd700;
+    color: #000;
+  }
+  #scripts-list li {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 0;
+  }
+  button {
+    padding: 0.5em 1em;
+    margin: 0.5em;
+  }
+  #progress-bar {
+    width: 100%;
+    height: 20px;
+    margin-top: 1em;
+  }
+  
