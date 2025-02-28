@@ -1,86 +1,110 @@
-﻿/* Base styling and theme presets */
+﻿/* Base styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    padding: 1em;
-    text-align: center;
-  }
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    padding: 1em;
-  }
-  section {
-    border: 1px solid #ccc;
-    padding: 1em;
-    flex: 1 1 400px;
-  }
-  
-  /* Light Mode */
-  .theme-light {
-    background-color: #fff;
-    color: #000;
-  }
-  
-  /* Improved Dark Mode */
-  .theme-dark {
-    background: #1e1e1e;
-    color: #e0e0e0;
-  }
-  .theme-dark header {
-    background: #292929;
-  }
-  .theme-dark section {
-    background: #2a2a2a;
-    border: 1px solid #444;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
-  .theme-dark button {
-    background-color: #444;
-    color: #e0e0e0;
-    border: none;
-    padding: 0.5em 1em;
-    margin: 0.5em;
-    cursor: pointer;
-  }
-  .theme-dark button:hover {
-    background-color: #555;
-  }
-  
-  /* Gold Theme */
-  .theme-gold {
-    background-color: #ffd700;
-    color: #000;
-  }
-  
-  #scripts-list li {
-    border-bottom: 1px solid #ccc;
-    padding: 0.5em 0;
-  }
-  button {
-    padding: 0.5em 1em;
-    margin: 0.5em;
-  }
-  #progress-bar {
-    width: 100%;
-    height: 20px;
-    margin-top: 1em;
-  }
-  #file-operations {
-    margin: 1em 0;
-  }
-  label {
-    margin-right: 1em;
-  }
-  #script-search {
-    margin: 1em 0;
-  }
-  #script-search input {
-    padding: 0.5em;
-    width: 70%;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 1em;
+  text-align: center;
+  background-color: #222;
+  color: #fff;
+}
+#theme-selector {
+  margin-top: 0.5em;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+/* Manage Scripts Section (narrower) */
+#script-manager {
+  flex: 1 1 40%;
+  border: 1px solid #ccc;
+  padding: 1em;
+  box-sizing: border-box;
+}
+#scripts-list li {
+  border-bottom: 1px solid #ccc;
+  padding: 0.1em 0;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+}
+#scripts-list li button {
+  margin-left: 5px; /* Reduced from 10px to 5px */
+}
+/* Larger, cleaner input textarea */
+#new-script-form textarea {
+  width: 100%;
+  height: 150px;
+  font-size: 16px;
+  padding: 0.5em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+}
+/* Practice Container: Practice Area + Outline Sidebar */
+#practice-container {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  box-sizing: border-box;
+}
+#practice-area {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 1em;
+  box-sizing: border-box;
+}
+/* Outline View Sidebar with smooth animation */
+#outline-view {
+  width: 0;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: #333;
+  color: #e0e0e0;
+  box-sizing: border-box;
+  transition: width 0.3s ease;
+}
+#outline-view.visible {
+  width: 300px;
+  padding: 1em;
+}
+#outline-view .outline-line {
+  padding: 0.25em 0;
+  cursor: pointer;
+}
+#outline-view .outline-line.active {
+  background: #555;
+}
+/* Theme styles */
+.theme-light {
+  background-color: #fff;
+  color: #000;
+}
+.theme-dark {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+.theme-dark header {
+  background: #292929;
+}
+.theme-dark button {
+  background-color: #444;
+  color: #e0e0e0;
+  border: none;
+  padding: 0.5em 1em;
+  margin: 0.5em 0.5em 0.5em 0;
+  cursor: pointer;
+}
+.theme-dark button:hover {
+  background-color: #555;
+}
+.theme-gold {
+  background-color: #ffd700;
+  color: #000;
+}
