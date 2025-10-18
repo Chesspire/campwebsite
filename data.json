@@ -4,14 +4,14 @@
             {
                 "image": "images/haresh.jpg",
                 "name": "Haresh Muralidharan",
-                "role": "President & Chief Executive Officer",
+                "role": "Founder and Chairman of the Board",
                 "email": "haresh@chesspire.org",
                 "fadeDelay": 0.1
             },
             {
                 "image": "images/kaartic.jpeg",
                 "name": "Kaartic Muralidharan",
-                "role": "Vice-President & Chief Operations Officer",
+                "role": "Cofounder and Chief Executive Officer",
                 "email": "kmuralidharan@nastudents.org",
                 "fadeDelay": 0.3
             },
