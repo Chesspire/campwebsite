@@ -181,22 +181,56 @@
         <!-- Home-->
         <div id="home" class="container-xxl py-5">
             <div class="container">
-                <div class="row g-5">
+                <div class="row gx-2">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="position-relative h-100">
-                            <img
-                                class="img-fluid"
-                                src="images/landingChess.gif"
-                                alt="Demo chess game playback gif"
-                                style="object-fit: cover;"
-                            >
+                            <div id="landingHeroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+                                <div class="carousel-inner">
+                                    <!-- Slide 1 (Active) -->
+                                    <div class="carousel-item  ">
+                                    <img src="images/past/dec2025/kaarticteach2.jpg" class="d-block w-100 img-fluid" alt="Students playing chess" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="carousel-item">
+                                    <img src="images/past/july2024/brain.png" class="d-block w-100 img-fluid" alt="Students in biology camp" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                    <!-- Slide 3 -->
+                                    <div class="carousel-item">
+                                    <img src="images/past/july2024/winners.png" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                    <!-- Slide 4 -->
+                                    <div class="carousel-item active">
+                                    <img src="images/past/june2023/everyone.jpg" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                      <!-- Slide 5 -->
+                                    <div class="carousel-item">
+                                    <img src="images/past/june2023/learn2.jpg" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                        <!-- Slide 6 -->
+                                    <div class="carousel-item">
+                                    <img src="images/past/dec2023/WhatsApp Image 2023-12-07 at 6.03.27 PM (6).jpeg" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                         <div class="carousel-item">
+                                    <img src="images/past/dec2023/6_crop_blur.jpg" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                           <div class="carousel-item">
+                                    <img src="images/past/dec2023/15.jpg" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                              <div class="carousel-item">
+                                    <img src="images/past/july2024/comp.png" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                                   <div class="carousel-item">
+                                    <img src="images/past/june2023/playwatch.JPG" class="d-block w-100 img-fluid" alt="Chesspire group photo" style="object-fit: cover; aspect-ratio: 16/9;">
+                                    </div>
+                                </div>
+                                </div>
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                         <h1 class="mb-4">Welcome to
                             <span class="text-primary">Chesspire</span>
                         </h1>
-                        <h2 class="mb-6" id="rotatingHeader">Level up from a ♙ to a ♕</h2>
+                        <h4 class="mb-6" id="rotatingHeader">Level up from a ♙ to a ♕</h4>
                         <p class="mb-0">
                             <i class="fa fa-chess fa-xl text-dark me-2"></i>An official 501(c)(3) organization dedicated to
                             <b>
@@ -239,9 +273,12 @@
                                 </p>
                             </div>
                         </div>
+                        
+                </div>
+                <div>
+                    <br>
                         <p class="mb-0">
-                            <i class="fa fa-gears fa-xl text-dark me-2"></i>We are currently in the process of setting up our next winter camps
-                            <br> on
+                            <i class="fa fa-gears fa-xl text-dark me-2"></i>We are currently in the process of setting up our next winter camps on
                             <b>
                                 <span class="text-primary">Biology</span>
                             </b> and
@@ -264,7 +301,7 @@
                     </p>
                      <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2" href="https://tinyurl.com/2025chesscamp"><i class="fa fa-chess-queen fa-xl text-light me-2"></i>Chess Signup</a>
                      <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2 mx-3" style = "background: #FE8800;" href="https://tinyurl.com/2025genetics"><i class="fa fa-dna fa-xl text-light me-2"></i>Genetics Science Signup</a>  
-                    <!-- MORE DETAILS BUTTON -->
+                     MORE DETAILS BUTTON -->
                         <!--  <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2" href="/#currentClass"><i class="fa fa-solid fa-circle-info fa-xl text-light me-2"></i>More Details</a>  
                     <br/>
                      <br/> -->
@@ -276,12 +313,13 @@
                             Take a look at our photos and testimonials 
                         for Cognitive Science, STEM, international chess, and Spanish chess camps below!
                             </br>
-                            <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2" href="#lastClass">Previous Camp Details</a>
+                            <div class="text-center mt-3">
+                               <a class="btn btn-primary rounded-pill  py-2 px-4 mt-2" href="#lastClass">Previous Camp Details</a>
+                            </div>
                         </p>
                         <!-- <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="">Volunteer</a>
                     <a class="btn btn-primary rounded-pill  py-3 px-5 mt-2" href="">Sponsor</a> -->
                     </div>
-                </div>
             </div>
         </div>
         <!-- Home -->

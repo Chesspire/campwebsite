@@ -271,7 +271,7 @@
         "Building the ultimate edge in Chess & STEM 📈",
         "Fostering critical thinking and lifelong curiosity 🧠",
         "Paving pathways from genetics to medicine 🧬",
-        "Preparing the next generation of medical innovators 🔬",
+        "Preparing the next gen of medical innovators 🔬",
         "From biology basics to advanced clinical research 🧬",
       ];
 
